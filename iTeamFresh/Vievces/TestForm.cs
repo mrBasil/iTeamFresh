@@ -16,12 +16,15 @@ namespace iTeamFresh.Vievces
         {
             InitializeComponent();
         }
+        private void CrosLeftSensor() {
 
+            Console.WriteLine("Событие пересечения левого датчика");
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             var pr = Program.mc.pr;
-
-            pr.RedIn = true;
+            pr.CrosSensorLeft += CrosLeftSensor;
+            pr.SensorLeft = true;
 
         }
     }

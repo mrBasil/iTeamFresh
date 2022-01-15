@@ -32,6 +32,9 @@ namespace iTeamFresh.DevicesIO
         private bool sensorRight;
         private bool sensorLef;
 
+        public event CrosSensor CrosSensorLeft;
+        public event CrosSensor CrosSensorRight;
+
         public bool RedOut { get { return redOut; } set { redOut = value; setIO(); } } 
         public bool RedIn { get { return redIn; } set { redIn = value; setIO(); } }
         public bool GreenOut { get { return greenOut; } set { greenOut = value; setIO(); } }
@@ -39,8 +42,32 @@ namespace iTeamFresh.DevicesIO
         public bool LeftBarrier { get { return leftBarrier; } set { leftBarrier = value; setIO(); } }
         public bool RightBarrier { get { return rightBarrier; } set { rightBarrier = value; setIO(); } }
 
-        public bool SensorLeft { get { return sensorLef; } set { sensorLef = value; } }
-        public bool SensorRight { get { return sensorRight; } set { sensorRight = value; } }
+        public bool SensorLeft 
+        { 
+            get { return sensorLef; }
+            set 
+            {
+                sensorLef = value;
+                if (value && CrosSensorLeft != null) {
+                    CrosSensorLeft();                    
+                }
+                    
+
+            } 
+        }
+        public bool SensorRight 
+        {
+            get { return sensorRight; }
+            set {
+                sensorRight = value;
+                if (value && CrosSensorRight != null) {
+                    CrosSensorRight();
+                    Console.WriteLine("Событие пересечения правого датчика");
+
+                }                   
+                
+            }
+        }
 
         /// <summary>
         /// Какой - то метод который будет включать и выключать дискретные входы

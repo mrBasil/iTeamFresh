@@ -6,9 +6,17 @@ using System.Threading.Tasks;
 
 namespace iTeamFresh.DevicesIO
 {
+    delegate void CrosSensor();
     internal interface iGeneralIO
-    {
-        
+    {   
+        /// <summary>
+        /// Событие пересечения левого датчика
+        /// </summary>
+        event CrosSensor CrosSensorLeft;
+        /// <summary>
+        /// Событие пересечения правого датчика
+        /// </summary>
+        event CrosSensor CrosSensorRight;
 
         /// <summary>
         /// Состояние светофора внешнего красного
@@ -36,7 +44,6 @@ namespace iTeamFresh.DevicesIO
         /// Состояние левого шлакбаума 1 поднят, 0 опущен
         /// </summary>
         bool RightBarrier { get; set; }
-
 
 
         /// <summary>

@@ -11,7 +11,7 @@ namespace iTeamFresh
     internal class MainClas
     {
         public PR200 pr { get; set; } = new PR200(new SerialPort());
-
+        
         
     }
 }
