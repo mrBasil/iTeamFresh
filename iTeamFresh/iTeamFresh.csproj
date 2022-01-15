@@ -54,6 +54,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Indicators\6_43.cs" />
+    <Compile Include="Indicators\iIndikator.cs" />
+    <Compile Include="Indicators\KeliXK31.cs" />
+    <Compile Include="Indicators\TenzoM.cs" />
     <Compile Include="MainClas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,7 +98,6 @@
   <ItemGroup>
     <Folder Include="DataBase\" />
     <Folder Include="DevicesRFIT\" />
-    <Folder Include="Indicators\" />
     <Folder Include="Scoreboards\" />
     <Folder Include="VideoCam\" />
   </ItemGroup>

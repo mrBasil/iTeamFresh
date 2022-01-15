@@ -10,7 +10,10 @@ namespace iTeamFresh.DevicesIO
     internal class PR200 : iGeneralIO
 
     {
-
+        /// <summary>
+        /// Класс раблты с ПР200
+        /// </summary>
+        /// <param name="port">Сериал порт настроенный и открытый </param>
         public PR200(SerialPort port)
         {
             this.port = port;
@@ -30,7 +33,6 @@ namespace iTeamFresh.DevicesIO
         private bool sensorLef;
 
         public bool RedOut { get { return redOut; } set { redOut = value; setIO(); } } 
-
         public bool RedIn { get { return redIn; } set { redIn = value; setIO(); } }
         public bool GreenOut { get { return greenOut; } set { greenOut = value; setIO(); } }
         public bool GreenInt { get { return greenIn; } set { greenIn = value; setIO(); } }
