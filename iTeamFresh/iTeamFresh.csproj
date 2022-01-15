@@ -61,6 +61,7 @@
     <Compile Include="MainClas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scoreboards\iScoreboard.cs" />
     <Compile Include="Vievces\TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,7 +99,6 @@
   <ItemGroup>
     <Folder Include="DataBase\" />
     <Folder Include="DevicesRFIT\" />
-    <Folder Include="Scoreboards\" />
     <Folder Include="VideoCam\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
