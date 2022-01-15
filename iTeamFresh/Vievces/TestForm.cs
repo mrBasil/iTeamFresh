@@ -8,23 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace iTeamFresh
+namespace iTeamFresh.Vievces
 {
-    public partial class Form1 : Form
+    public partial class TestForm : Form
     {
-        public Form1()
+        public TestForm()
         {
             InitializeComponent();
         }
 
-       
-
-        private void button1_Click_1(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            Form testForm = new Vievces.TestForm();
-            testForm.Show();
+            var pr = Program.mc.pr;
 
-            
+            pr.RedIn = true;
+
         }
     }
 }
