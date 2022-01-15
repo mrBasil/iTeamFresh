@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="DevicesIO\iGeneralIO.cs" />
     <Compile Include="DevicesIO\PR200.cs" />
+    <Compile Include="DevicesRFIT\iRFITDevice.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,7 +99,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataBase\" />
-    <Folder Include="DevicesRFIT\" />
     <Folder Include="VideoCam\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
