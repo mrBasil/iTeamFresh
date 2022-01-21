@@ -11,17 +11,33 @@ namespace iTeamFresh
 {
     internal class MainClas
     {
-        public PR200 pr { get; set; } = new PR200(new SerialPort());
-
-        private Protoсol prot = new Protoсol(new SerialPort());
-
         public Indikator indicator { get; set; }
 
-        public void setIndicator() 
-        {
-            var protForIndicator = Protoсol.Protocols.Keli;
+        /// <summary>
+        /// Онсовной класс программы который дает доступ ко всем исполнительным механизмам и базе данных
+        /// </summary>
+        public MainClas() {
+            /*
+             * вот в этом месте будет осуществляться комплектация программы
+             * здест должен быть код который будет подгружать все нужные классы согласно лицензии
+             
+             */
+            setIndicator();
+        }   
 
-            indicator = prot.GetIndicator((int)protForIndicator);
+        
+        public void setIndicator()
+        {
+            /* Вот в этом месте нужно дернуть инфу из конфига, настроить ком порт и вызвать нужный протокол */
+
+            SerialPort sp = new SerialPort("COM4", 9600);
+            sp.Open();
+
+            Protoсol prot = new Protoсol(sp);
+
+            indicator = prot.GetIndicator((int)Protoсol.Protocols.Keli);
+
+            
         }
         
     }

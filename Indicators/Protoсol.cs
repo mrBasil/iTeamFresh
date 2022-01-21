@@ -10,7 +10,7 @@ namespace Indicators
     public class Protoсol
     {
         /// <summary>
-        /// Общий класс для выбора протокола
+        /// Класс для выбора протокола
         /// </summary>
         public enum Protocols : int
         {
@@ -57,10 +57,13 @@ namespace Indicators
             switch (protokol)
             {
                 case (int)Protocols.Keli:
+                   
                     return new KeliXK3109(serialPort);                    
+
                 case (int)Protocols.TenzoM:
                     return null;
                     break;
+
                 case (int)Protocols.p643:
                     return null;
                     break;

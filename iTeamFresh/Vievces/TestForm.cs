@@ -7,25 +7,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Indicators;
 
 namespace iTeamFresh.Vievces
 {
     public partial class TestForm : Form
     {
+
+        private Timer timer = new Timer();
+
+        private MainClas mc = Program.mc;
+        private Indikator indikator;
+
         public TestForm()
         {
             InitializeComponent();
-        }
-        private void CrosLeftSensor() {
+            timer.Tick += new EventHandler(UpdateLabel);
+            timer.Interval = 50;
+            timer.Start();
 
-            Console.WriteLine("Событие пересечения левого датчика");
+            
+            indikator = mc.indicator;
         }
+       
         private void button1_Click(object sender, EventArgs e)
-        {
-            var pr = Program.mc.pr;
-            pr.CrosSensorLeft += CrosLeftSensor;
-            pr.SensorLeft = true;
-
+        {            
+           
         }
+        private void UpdateLabel(object sender, EventArgs e) {
+            if (indikator != null)
+                if (indikator.Stab)
+                {
+                    lb_weight.Text = indikator.Weight + " kg";
+                    lb_weight.ForeColor = Color.Blue;
+                }
+                else {
+                    lb_weight.Text = indikator.Weight + " kg";
+                    lb_weight.ForeColor = Color.Gray;
+                }
+                    
+                
+
+           
+        }
+
     }
 }

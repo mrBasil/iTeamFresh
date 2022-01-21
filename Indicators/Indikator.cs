@@ -16,13 +16,21 @@ namespace Indicators
         public abstract SerialPort ComPort { get; set; }
 
         /// <summary>
-        /// Свойство Вес в int
+        /// Вес в int
         /// </summary>
         public abstract int Weight { get; set; }
+        /// <summary>
+        /// Количество знаков после запятой
+        /// </summary>
         public abstract int CharactersAfterDot { get; set; }
-
+        /// <summary>
+        /// Флаг стабильности
+        /// </summary>
         public abstract bool Stab { get;  set; }
 
+        /// <summary>
+        /// Метод обнуления веса на терминале, работает только в случаее если протокол запрос/ответный
+        /// </summary>
         public abstract void SetZero();
     }
 }
