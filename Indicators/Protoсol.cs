@@ -9,9 +9,18 @@ namespace Indicators
 {
     public class Protoсol
     {
+        /// <summary>
+        /// Общий класс для выбора протокола
+        /// </summary>
         public enum Protocols : int
         {
-            /*Нумерованный список с протоколами для связи с терминалами*/
+            /*
+             * Нумерованный список с протоколами для связи с терминалами,
+             * нужен для проверки условий при инициализации нужного протокола
+             * порядок названий протоколов должен соответствовать порядку 
+             * в массиве с названиями протоколов
+             */
+
             Keli,
             TenzoM,
             p643
@@ -19,8 +28,10 @@ namespace Indicators
 
         /// <summary>
         /// Массив со всеми протоколами
+        /// индекс элемента данного массива служит номером для выбора нужного индекатора
+        /// из метода GetIndicator()
         /// </summary>
-        public static readonly string[] protocols = new string[] { "keli", "TenzoM", "6.43" };
+        public static readonly string[] protocols = new string[] { "keli k9", "TenzoM", "6.43" };
         
         /// <summary>
         /// Обьект компорта, настроенный и открытый
@@ -35,13 +46,13 @@ namespace Indicators
             this.serialPort = port;
         }
 
-        
+
         /// <summary>
-        /// Метод для загрузки нужного протоколы, возвращает класс работы с терминалом
+        /// Метод для загрузки нужного протокола
         /// </summary>
-        /// <param name="protokol"> Enum  с выбранным протоколом</param>
-        /// <returns></returns>
-        public Indikator GetIndikator(int protokol ) {
+        /// <param name="protokol"> Индекс элемента из массива с названиями протоколов</param>
+        /// <returns> Возвращает класс работы с терминалом </returns>
+        public Indikator GetIndicator(int protokol ) {
 
             switch (protokol)
             {

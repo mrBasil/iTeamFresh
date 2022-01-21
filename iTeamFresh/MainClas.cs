@@ -19,10 +19,9 @@ namespace iTeamFresh
 
         public void setIndicator() 
         {
-
             var protForIndicator = Protoсol.Protocols.Keli;
 
-            indicator = prot.GetIndikator((int)protForIndicator);
+            indicator = prot.GetIndicator((int)protForIndicator);
         }
         
     }

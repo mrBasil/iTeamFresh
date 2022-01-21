@@ -7,11 +7,17 @@ using System.IO.Ports;
 
 namespace Indicators
 {
+    /// <summary>
+    /// Общий класс для всех индикаторов
+    /// </summary>
     public abstract class Indikator
     {     
 
         public abstract SerialPort ComPort { get; set; }
 
+        /// <summary>
+        /// Свойство Вес в int
+        /// </summary>
         public abstract int Weight { get; set; }
         public abstract int CharactersAfterDot { get; set; }
 
