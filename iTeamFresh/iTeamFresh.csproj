@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Indicators">
+      <HintPath>..\Indicators\bin\Debug\Indicators.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -55,10 +58,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Indicators\6_43.cs" />
-    <Compile Include="Indicators\iIndikator.cs" />
-    <Compile Include="Indicators\KeliXK31.cs" />
-    <Compile Include="Indicators\TenzoM.cs" />
+    <Compile Include="General\ComPort.cs" />
     <Compile Include="MainClas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
