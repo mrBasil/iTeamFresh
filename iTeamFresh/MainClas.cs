@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO.Ports;
-
+using IODOmoduls;
 using Indicators;
 
 namespace iTeamFresh
@@ -12,6 +12,7 @@ namespace iTeamFresh
     internal class MainClas
     {
         public Indikator indicator { get; set; }
+        public ModulIO modulIO { get; set; }
 
         /// <summary>
         /// Онсовной класс программы который дает доступ ко всем исполнительным механизмам и базе данных
@@ -29,9 +30,7 @@ namespace iTeamFresh
             /* Вот в этом месте нужно дернуть инфу из конфига, настроить ком порт и вызвать нужный протокол */
 
             SerialPort sp = new SerialPort("COM4", 9600);
-            sp.Open();
-
-            
+            sp.Open();          
 
             indicator = Protoсol.GetIndicator((int)Protoсol.Protocols.Keli, sp);
 

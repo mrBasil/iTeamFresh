@@ -18,7 +18,10 @@ namespace Indicators
 
         private int weight = 999999;
         private bool stab;
-
+        /// <summary>
+        /// Класс для работы с идикаторами keliXK3109
+        /// </summary>
+        /// <param name="serialPort">Настроенный и открытый ком порт</param>
         public KeliXK3109(SerialPort serialPort) 
         {
             comPort = serialPort;            
