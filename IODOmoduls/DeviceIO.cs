@@ -13,7 +13,7 @@ namespace IODOmoduls
         /// Массив всех модулей ввода/вывода
         /// порядковый номер выбранного модуля в этом массиве нужно передать в метод getDevice();
         /// </summary>
-        public string[] devicesName = new string[] { "ПР200 v5", "MB110", "Arduino v1.0" };
+        public string[] devicesName = new string[] { "ПР200 v5" };
         
 
         /// <summary>
