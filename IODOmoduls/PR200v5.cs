@@ -15,9 +15,7 @@ namespace IODOmoduls
         
 
         private static int DI;
-        private static int DO; 
-
-
+        private static int DO;
 
         /// <summary>
         /// Работа с ПР200 с прошивкой версия 5

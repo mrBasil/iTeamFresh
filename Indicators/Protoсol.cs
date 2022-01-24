@@ -31,20 +31,8 @@ namespace Indicators
         /// индекс элемента данного массива служит номером для выбора нужного индекатора
         /// из метода GetIndicator()
         /// </summary>
-        public static readonly string[] protocols = new string[] { "keli k9", "TenzoM", "6.43" };
+        public static readonly string[] protocols = new string[] { "keli k9", "TenzoM", "6.43" };       
         
-        /// <summary>
-        /// Обьект компорта, настроенный и открытый
-        /// </summary>
-        private SerialPort serialPort;
-
-        /// <summary>
-        /// Класс для выбора протокола работы 
-        /// </summary>
-        /// <param name="port">Открытый настроенный компорт</param>
-        public Protoсol (SerialPort port) {         
-            this.serialPort = port;
-        }
 
 
         /// <summary>
@@ -52,13 +40,13 @@ namespace Indicators
         /// </summary>
         /// <param name="protokol"> Индекс элемента из массива с названиями протоколов</param>
         /// <returns> Возвращает класс работы с терминалом </returns>
-        public Indikator GetIndicator(int protokol ) {
+        public static Indikator GetIndicator(int protokol, SerialPort port ) {
 
             switch (protokol)
             {
                 case (int)Protocols.Keli:
                    
-                    return new KeliXK3109(serialPort);                    
+                    return new KeliXK3109(port);                    
 
                 case (int)Protocols.TenzoM:
                     return null;

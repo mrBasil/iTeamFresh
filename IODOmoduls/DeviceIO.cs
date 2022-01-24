@@ -13,7 +13,7 @@ namespace IODOmoduls
         /// Массив всех модулей ввода/вывода
         /// порядковый номер выбранного модуля в этом массиве нужно передать в метод getDevice();
         /// </summary>
-        public string[] devicesName = new string[] { "ПР200 v5" };
+        public static string[] devicesName = new string[] { "ПР200 v5" };
         
 
         /// <summary>
@@ -22,7 +22,7 @@ namespace IODOmoduls
         /// <param name="nameDevice"> Порядковый номер дмодуля в массиве с названиями модуля deviceName</param>
         /// <param name="port"> Ком порт, открытый и настроенный </param>
         /// <returns></returns>
-        public ModulIO getDevice(int nameDevice, SerialPort port) {
+        public static  ModulIO getDevice(int nameDevice, SerialPort port) {
             switch (nameDevice) { 
                 case 0:
                     return new PR200v5(port);

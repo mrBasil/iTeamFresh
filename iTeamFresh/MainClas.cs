@@ -23,7 +23,6 @@ namespace iTeamFresh
              */
             
         }   
-
         
         public void setIndicator()
         {
@@ -32,9 +31,9 @@ namespace iTeamFresh
             SerialPort sp = new SerialPort("COM4", 9600);
             sp.Open();
 
-            Protoсol prot = new Protoсol(sp);
+            
 
-            indicator = prot.GetIndicator((int)Protoсol.Protocols.Keli);
+            indicator = Protoсol.GetIndicator((int)Protoсol.Protocols.Keli, sp);
 
             
         }
