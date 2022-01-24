@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO.Ports;
-using iTeamFresh.DevicesIO;
+
 using Indicators;
 
 namespace iTeamFresh
@@ -22,7 +22,7 @@ namespace iTeamFresh
              * здест должен быть код который будет подгружать все нужные классы согласно лицензии
              
              */
-            setIndicator();
+            
         }   
 
         

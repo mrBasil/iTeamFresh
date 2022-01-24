@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Indicators;
+using IODOmoduls;
+using System.IO.Ports;
 
 namespace iTeamFresh.Vievces
 {
@@ -31,20 +33,16 @@ namespace iTeamFresh.Vievces
         }
        
         private void button1_Click(object sender, EventArgs e)
-        {            
-           
+        {
+            SerialPort port = new SerialPort("COM3", 9600);
+            port.Open();
+
+            ModulIO pr = new PR200v5(port);
+            Console.WriteLine(pr.SensorLeft);
+            
+            Console.WriteLine(pr.SensorRight);
         }
         private void UpdateLabel(object sender, EventArgs e) {
-            if (indikator != null)
-                if (indikator.Stab)
-                {
-                    lb_weight.Text = indikator.Weight + " kg";
-                    lb_weight.ForeColor = Color.Blue;
-                }
-                else {
-                    lb_weight.Text = indikator.Weight + " kg";
-                    lb_weight.ForeColor = Color.Gray;
-                }
                     
                 
 
