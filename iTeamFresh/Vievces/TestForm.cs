@@ -39,8 +39,10 @@ namespace iTeamFresh.Vievces
 
             ModulIO pr = new PR200v5(port);
             Console.WriteLine(pr.SensorLeft);
+            pr.GreenOut = true;            
             
             Console.WriteLine(pr.SensorRight);
+            Console.WriteLine(pr.GreenOut);
         }
         private void UpdateLabel(object sender, EventArgs e) {
                     
