@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IODOmoduls
+namespace IOmoduls
 {
     /// <summary>
     /// Общий класс для весх модулей ввода/вывода

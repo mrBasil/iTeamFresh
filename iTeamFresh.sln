@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTeamFresh", "iTeamFresh\iT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indicators", "Indicators\Indicators.csproj", "{68333E94-2F46-4C67-A042-CFB26BA21F97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IODOmoduls", "IODOmoduls\IODOmoduls.csproj", "{7C2FD3C1-1BB9-49BD-B7DF-5E5EF3D240F1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOmoduls", "IODOmoduls\IOmoduls.csproj", "{7C2FD3C1-1BB9-49BD-B7DF-5E5EF3D240F1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scoreboards", "Scoreboards\Scoreboards.csproj", "{6D59088C-7BC5-4E31-8A9A-4177C94A7A4D}"
 EndProject

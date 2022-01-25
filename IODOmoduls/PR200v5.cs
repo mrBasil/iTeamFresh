@@ -4,7 +4,7 @@ using Modbus.Device;
 using System.IO.Ports;
 using System;
 
-namespace IODOmoduls
+namespace IOmoduls
 {
     public class PR200v5:ModulIO
     {

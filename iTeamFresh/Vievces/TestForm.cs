@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Indicators;
-using IODOmoduls;
+using IOmoduls;
 using System.IO.Ports;
 
 namespace iTeamFresh.Vievces
@@ -19,7 +13,6 @@ namespace iTeamFresh.Vievces
         private Timer timer = new Timer();
 
         private MainClas mc = Program.mc;
-
         private Indikator indikator;
 
         public TestForm()
@@ -37,6 +30,7 @@ namespace iTeamFresh.Vievces
         {
             indikator.SetZero();
         }
+
         private void UpdateLabel(object sender, EventArgs e) {
 
             if (indikator.Stab)

@@ -7,7 +7,7 @@
     <ProjectGuid>{7C2FD3C1-1BB9-49BD-B7DF-5E5EF3D240F1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IODOmoduls</RootNamespace>
+    <RootNamespace>IOmoduls</RootNamespace>
     <AssemblyName>IODOmoduls</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
