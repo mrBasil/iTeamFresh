@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace IODOmoduls
 {
-    
+    /// <summary>
+    /// Общий класс для весх модулей ввода/вывода
+    /// </summary>
     public abstract class ModulIO
     {
         protected bool redOut;

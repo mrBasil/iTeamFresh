@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.IO.Ports;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Timers;
 
 namespace Indicators
@@ -18,20 +17,29 @@ namespace Indicators
 
         private int weight = 999999;
         private bool stab;
+
+        private int intervalStab = 3000;
+        
         /// <summary>
         /// Класс для работы с идикаторами keliXK3109
         /// </summary>
         /// <param name="serialPort">Настроенный и открытый ком порт</param>
-        public KeliXK3109(SerialPort serialPort) 
+        public KeliXK3109(SerialPort serialPort ) 
         {
+            
             comPort = serialPort;            
             comPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
-            timer.Interval = 3000;
+            timer.Interval = intervalStab;
             timer.Elapsed += checkStabForTimer;
                         
         }
 
-        
+        public override int IntervalStab 
+        { 
+            get { return intervalStab; } 
+            set { timer.Interval = value; intervalStab = value; } 
+        } 
+
 
         public override SerialPort ComPort { get { return comPort; } set { comPort = value; } }
 

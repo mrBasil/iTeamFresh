@@ -22,8 +22,8 @@ namespace Indicators
              */
 
             Keli,
-            TenzoM,
-            p643
+            TenzoM643,
+            
         }
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace Indicators
         /// индекс элемента данного массива служит номером для выбора нужного индекатора
         /// из метода GetIndicator()
         /// </summary>
-        public static readonly string[] protocols = new string[] { "keli k9", "TenzoM", "6.43" };       
+        public static readonly string[] protocols = new string[] { "keli k9", "TenzoM 6.43" };       
         
 
 
@@ -48,13 +48,11 @@ namespace Indicators
                    
                     return new KeliXK3109(port);                    
 
-                case (int)Protocols.TenzoM:
-                    return null;
+                case (int)Protocols.TenzoM643:
+                    return new TenzoM643(port);
                     break;
 
-                case (int)Protocols.p643:
-                    return null;
-                    break;
+                
                 default:
                     return null;
             }

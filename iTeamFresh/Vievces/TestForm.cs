@@ -19,6 +19,7 @@ namespace iTeamFresh.Vievces
         private Timer timer = new Timer();
 
         private MainClas mc = Program.mc;
+
         private Indikator indikator;
 
         public TestForm()
@@ -34,21 +35,21 @@ namespace iTeamFresh.Vievces
        
         private void button1_Click(object sender, EventArgs e)
         {
-            SerialPort port = new SerialPort("COM3", 9600);
-            port.Open();
-
-            ModulIO pr = new PR200v5(port);
-            Console.WriteLine(pr.SensorLeft);
-            pr.GreenOut = true;            
-            
-            Console.WriteLine(pr.SensorRight);
-            Console.WriteLine(pr.GreenOut);
+            indikator.SetZero();
         }
         private void UpdateLabel(object sender, EventArgs e) {
-                    
-                
 
-           
+            if (indikator.Stab)
+            {
+                lb_weight.ForeColor = Color.Green;
+                lb_weight.Text = indikator.Weight + " kg";
+            }
+            else {
+
+                lb_weight.ForeColor = Color.Gray;
+                lb_weight.Text = indikator.Weight + " kg";
+            }
+            
         }
 
     }

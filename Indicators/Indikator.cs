@@ -12,6 +12,10 @@ namespace Indicators
     /// </summary>
     public abstract class Indikator
     {     
+        /// <summary>
+        /// Интервал времени на установление стабильности в милли секундах 
+        /// </summary>
+        public abstract int IntervalStab { get; set; }
 
         public abstract SerialPort ComPort { get; set; }
 
