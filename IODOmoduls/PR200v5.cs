@@ -6,6 +6,9 @@ using System;
 
 namespace IOmoduls
 {
+    /// <summary>
+    /// Класс для работы с ПР200 версия прошивки 5
+    /// </summary>
     public class PR200v5:ModulIO
     {
 

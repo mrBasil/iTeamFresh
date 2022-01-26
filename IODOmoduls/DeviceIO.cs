@@ -7,6 +7,9 @@ using System.IO.Ports;
 
 namespace IOmoduls
 {
+    /// <summary>
+    /// Класс для выбора модуля ввода вывода
+    /// </summary>
     public class DeviceIO
     {
         /// <summary>
@@ -21,7 +24,7 @@ namespace IOmoduls
         /// </summary>
         /// <param name="nameDevice"> Порядковый номер дмодуля в массиве с названиями модуля deviceName</param>
         /// <param name="port"> Ком порт, открытый и настроенный </param>
-        /// <returns></returns>
+        /// <returns>Класс для работы с модулем ввода/вывода</returns>
         public static  ModulIO getDevice(int nameDevice, SerialPort port) {
             switch (nameDevice) { 
                 case 0:

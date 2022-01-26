@@ -44,10 +44,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithms\Algorithm.cs" />
+    <Compile Include="Algorithms\FourTrafficLightsTwoSensorsStandard.cs" />
     <Compile Include="DeviceIO.cs" />
     <Compile Include="ModulIO.cs" />
     <Compile Include="PR200v5.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Indicators\Indicators.csproj">
+      <Project>{68333e94-2f46-4c67-a042-cfb26ba21f97}</Project>
+      <Name>Indicators</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
