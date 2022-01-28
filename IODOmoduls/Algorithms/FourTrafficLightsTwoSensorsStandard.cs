@@ -33,8 +33,7 @@ namespace IOmoduls.Algorithms
 
         private void AutoTraffic() {
 
-            
-            
+                       
             
         }
 
