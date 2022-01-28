@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанные со сборкой.
 [assembly: AssemblyTitle("IODOmoduls")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Библиотека для работы с модулями ввода/вывода и реализации алгоритмов проездов через статические весы")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("iTimeFresh, iTablo.ru")]
 [assembly: AssemblyProduct("IODOmoduls")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]

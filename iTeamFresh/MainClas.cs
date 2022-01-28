@@ -25,11 +25,15 @@ namespace iTeamFresh
              * вот в этом месте будет осуществляться комплектация программы
              * здест должен быть код который будет подгружать все нужные классы согласно лицензии            
              */
-            setIndicator();
+            SetIndicator();
+
+            //SetIOmodul();
             
         }   
-        
-        public void setIndicator()
+        /// <summary>
+        /// Метод для выбора индикаторы для работы с данным проектом
+        /// </summary>
+        public void SetIndicator()
         {
             /* Вот в этом месте нужно дернуть инфу из конфига, настроить ком порт и вызвать нужный протокол */
 
@@ -37,11 +41,17 @@ namespace iTeamFresh
             sp.Open();
 
             indicator =  Protoсol.GetIndicator((int)Protoсol.Protocols.TenzoM643, sp);
-            indicator.IntervalStab = 1500;
+            
             
 
             
         }
-        
+        public void SetIOmodul() {
+            SerialPort sp = new SerialPort("COM3", 9600);
+            sp.Open();
+
+            modulIO = DeviceIO.getDevice(0, sp);
+
+        }   
     }
 }

@@ -29,7 +29,7 @@ namespace IOmoduls
             switch (nameDevice) { 
                 case 0:
                     return new PR200v5(port);
-                    break;
+                    
 
                 default: return null;
             }

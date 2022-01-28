@@ -23,6 +23,7 @@ namespace Indicators
 
             Keli,
             TenzoM643,
+            UtiCel
             
         }
 
@@ -44,14 +45,14 @@ namespace Indicators
 
             switch (protokol)
             {
-                case (int)Protocols.Keli:
-                   
+                case (int)Protocols.Keli:                   
                     return new KeliXK3109(port);                    
 
                 case (int)Protocols.TenzoM643:
                     return new TenzoM643(port);
-                    break;
 
+                case (int)Protocols.UtiCel:
+                    return null;
                 
                 default:
                     return null;
