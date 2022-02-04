@@ -7,10 +7,13 @@ using System.IO.Ports;
 
 namespace Indicators
 {
+    /// <summary>
+    /// Класс для выбора протокола
+    /// </summary>
     public class Protoсol
     {
         /// <summary>
-        /// Класс для выбора протокола
+        /// Enum для выбора протоколов
         /// </summary>
         public enum Protocols : int
         {

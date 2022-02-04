@@ -33,7 +33,6 @@ namespace IOmoduls.Algorithms
 
         public FourTrafficLightsTwoSensorsStandard(Indikator indikator, ModulIO modulIO) : base(indikator, modulIO)
         {
-
             ManagerTraffic();
         }
 

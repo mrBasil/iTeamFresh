@@ -18,7 +18,9 @@ namespace iTeamFresh.Vievces
         public TestForm()
         {
             InitializeComponent();
-            timer.Tick += new EventHandler(UpdateLabel);
+            if(indikator!=null)
+                timer.Tick += new EventHandler(UpdateLabel);
+
             timer.Interval = 50;
             timer.Start();
 
