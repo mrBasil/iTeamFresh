@@ -39,10 +39,7 @@ namespace iTeamFresh
 
             SerialPort sp = new SerialPort("COM3", 9600);
             sp.Open();
-
             indicator =  Protoсol.GetIndicator((int)Protoсol.Protocols.TenzoM643, sp);
-            
-            
 
             
         }

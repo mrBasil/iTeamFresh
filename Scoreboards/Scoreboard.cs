@@ -10,8 +10,7 @@ namespace Scoreboards
     public abstract class Scoreboard
     {
         public abstract int weight { get; set; }
-        public abstract int numberCharsAfterDot { get; set; } 
-
+        public abstract int numberCharsAfterDot { get; set; }
         public abstract SerialPort port { get; set; }
     }
 }
