@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7C2FD3C1-1BB9-49BD-B7DF-5E5EF3D240F1}</ProjectGuid>
+    <ProjectGuid>{AB1A716B-3D37-4EE2-B083-8D8B81F05291}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IOmoduls</RootNamespace>
-    <AssemblyName>IODOmoduls</AssemblyName>
+    <RootNamespace>Languages</RootNamespace>
+    <AssemblyName>Languages</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,9 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NModbus4">
-      <HintPath>..\..\..\..\Desktop\all for work\NModbus4.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,19 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Algorithms\Algorithm.cs" />
-    <Compile Include="Algorithms\FourTrafficLightsTwoSensorsStandard.cs" />
-    <Compile Include="DeviceIO.cs" />
-    <Compile Include="ModulIO.cs" />
-    <Compile Include="PR200v6.cs" />
-    <Compile Include="PR200vPrime20.cs" />
+    <Compile Include="English.cs" />
+    <Compile Include="Language.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Indicators\Indicators.csproj">
-      <Project>{68333e94-2f46-4c67-a042-cfb26ba21f97}</Project>
-      <Name>Indicators</Name>
-    </ProjectReference>
+    <Compile Include="Russian.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

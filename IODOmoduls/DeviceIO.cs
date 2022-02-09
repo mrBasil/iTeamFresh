@@ -16,7 +16,7 @@ namespace IOmoduls
         /// Массив всех модулей ввода/вывода
         /// порядковый номер выбранного модуля в этом массиве нужно передать в метод getDevice();
         /// </summary>
-        public static string[] devicesName = new string[] { "ПР200 v5" };
+        public static string[] devicesName = new string[] { "ПР200 prime 2.0", "ПР200 v 6.0" };
         
 
         /// <summary>
@@ -28,8 +28,9 @@ namespace IOmoduls
         public static  ModulIO getDevice(int nameDevice, SerialPort port) {
             switch (nameDevice) { 
                 case 0:
-                    return new PR200v5(port);
-                    
+                    return new PR200vPrime20(port);
+                case 1:
+                    return new PR200v6(port);
 
                 default: return null;
             }

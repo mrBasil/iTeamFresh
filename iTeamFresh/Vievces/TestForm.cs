@@ -4,48 +4,38 @@ using System.Windows.Forms;
 using Indicators;
 using IOmoduls;
 using System.IO.Ports;
+using System.Threading;
 
 namespace iTeamFresh.Vievces
 {
     public partial class TestForm : Form
     {
 
-        private Timer timer = new Timer();
+        
 
         private MainClas mc = Program.mc;
-        private Indikator indikator;
+        private ModulIO modul;
 
         public TestForm()
         {
             InitializeComponent();
-            if(indikator!=null)
-                timer.Tick += new EventHandler(UpdateLabel);
-
-            timer.Interval = 50;
-            timer.Start();
-
+            modul = mc.modulIO;           
             
-            indikator = mc.indicator;
         }
        
         private void button1_Click(object sender, EventArgs e)
-        {
-            indikator.SetZero();
+        {                   
+
+                bool left = modul.SensorLeft;
+                bool right = modul.SensorRight;
+                Console.WriteLine(left + " " + right);      
+            
+
+
         }
 
-        private void UpdateLabel(object sender, EventArgs e) {
-
-            if (indikator.Stab)
-            {
-                lb_weight.ForeColor = Color.Green;
-                lb_weight.Text = indikator.Weight + " kg";
-            }
-            else {
-
-                lb_weight.ForeColor = Color.Gray;
-                lb_weight.Text = indikator.Weight + " kg";
-            }
-            
+        private void UpdateLabel(object sender, EventArgs e)
+        {            
         }
 
     }

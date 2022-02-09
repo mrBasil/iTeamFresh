@@ -45,7 +45,7 @@
             // lb_weight
             // 
             this.lb_weight.AutoSize = true;
-            this.lb_weight.Location = new System.Drawing.Point(371, 102);
+            this.lb_weight.Location = new System.Drawing.Point(282, 59);
             this.lb_weight.Name = "lb_weight";
             this.lb_weight.Size = new System.Drawing.Size(52, 13);
             this.lb_weight.TabIndex = 1;
@@ -55,7 +55,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(494, 450);
             this.Controls.Add(this.lb_weight);
             this.Controls.Add(this.button1);
             this.Name = "TestForm";

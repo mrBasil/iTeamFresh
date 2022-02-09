@@ -11,21 +11,21 @@ using System.Windows.Forms;
 
 namespace iTeamFresh
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
 
        
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            Form testForm = new Vievces.TestForm();
-            testForm.Show();
 
-            
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var test =  new Vievces.TestForm();
+            test.Show();
         }
     }
 }

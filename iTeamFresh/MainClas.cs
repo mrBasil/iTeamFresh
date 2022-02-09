@@ -27,7 +27,7 @@ namespace iTeamFresh
              */
             //SetIndicator();
 
-            //SetIOmodul();
+            SetIOmodul();
             
         }   
         /// <summary>
@@ -44,11 +44,12 @@ namespace iTeamFresh
             
         }
         public void SetIOmodul() {
-            SerialPort sp = new SerialPort("COM3", 9600);
+            SerialPort sp = new SerialPort("COM4", 9600);
             sp.Open();
 
-            modulIO = DeviceIO.getDevice(0, sp);
+            modulIO = DeviceIO.getDevice(1, sp);
 
+            Console.WriteLine(modulIO.GetType() + " ");
         }   
     }
 }

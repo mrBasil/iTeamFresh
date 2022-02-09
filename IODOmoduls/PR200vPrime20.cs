@@ -7,9 +7,9 @@ using System;
 namespace IOmoduls
 {
     /// <summary>
-    /// Класс для работы с ПР200 версия прошивки 5
+    /// Класс для работы с ПР200 v prime 2.0
     /// </summary>
-    public class PR200v5:ModulIO
+    public class PR200vPrime20:ModulIO
     {
 
         private static IModbusSerialMaster master;
@@ -21,10 +21,10 @@ namespace IOmoduls
         private static int DO;
 
         /// <summary>
-        /// Работа с ПР200 с прошивкой версия 5
+        /// Работа с ПР200 с прошивкой версия prime 2.0
         /// </summary>
         /// <param name="port"> Открытый настроенный COM порт</param>
-        public PR200v5(SerialPort port) {
+        public PR200vPrime20(SerialPort port) {
             if(port.IsOpen)
                 master = ModbusSerialMaster.CreateRtu(port);           
         }
