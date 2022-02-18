@@ -61,6 +61,12 @@
     <Compile Include="MainClas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vievces\MnemoShemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vievces\MnemoShemForm.Designer.cs">
+      <DependentUpon>MnemoShemForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vievces\TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,7 +84,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Vievces\MnemoShemForm.resx">
+      <DependentUpon>MnemoShemForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vievces\TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,6 +105,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\зеленый.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\красный.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\серый.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataBase\DataBase.csproj">
+      <Project>{67b9c7af-7718-4d09-8610-218b9245bacf}</Project>
+      <Name>DataBase</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

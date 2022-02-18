@@ -15,13 +15,15 @@ namespace IOmoduls
     {
         private static IModbusSerialMaster master;
 
-        private static byte slaveId = 5;
+        private byte slaveId = 5;
 
         /// <summary>
         /// Класс для работы с ПР200 v 6.0
         /// </summary>
-        public PR200v6(SerialPort port)
+        public PR200v6(SerialPort port, byte slaveId = 5)
         {
+            this.slaveId = slaveId;
+
             if (port.IsOpen)
                 master = ModbusSerialMaster.CreateRtu(port);
         }
@@ -132,12 +134,6 @@ namespace IOmoduls
                 }
 
             }
-
-
-
-
-
-
         }
 
         private bool GetDI(int numberDI) {

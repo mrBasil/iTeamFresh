@@ -16,9 +16,7 @@ namespace iTeamFresh
         public MainForm()
         {
             InitializeComponent();
-        }
-
-       
+        }      
 
 
 

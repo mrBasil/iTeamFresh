@@ -13,9 +13,7 @@ namespace IOmoduls
     {
 
         private static IModbusSerialMaster master;
-
-        private static byte slaveId = 5;
-        
+        private byte slaveId = 5;       
 
         private static int DI;
         private static int DO;
@@ -24,7 +22,8 @@ namespace IOmoduls
         /// Работа с ПР200 с прошивкой версия prime 2.0
         /// </summary>
         /// <param name="port"> Открытый настроенный COM порт</param>
-        public PR200vPrime20(SerialPort port) {
+        public PR200vPrime20(SerialPort port, byte slaveId = 5) {
+            this.slaveId = slaveId;
             if(port.IsOpen)
                 master = ModbusSerialMaster.CreateRtu(port);           
         }
@@ -42,28 +41,28 @@ namespace IOmoduls
            
             DO = master.ReadInputRegisters(slaveId, 513, 1)[0];
 
-            if ((DO & 1) == 1)
-                redIn = true;
-            
-            else redIn = false;
-
             if ((DO & 2) == 2)
+                redOut = true;
+            
+            else redOut = false;
+
+            if ((DO & 4) == 4)
                 greenOut = true;
             else greenOut = false;
 
-            if ((DO & 4) == 4)
+            if ((DO & 8) == 8)
                 redIn = true;
             else redIn = false;
 
-            if ((DO & 8) == 8)
+            if ((DO & 16) == 16)
                 greenIn = true;
             else greenIn = false;
 
-            if ((DO & 16) == 16)
+            if ((DO & 32) == 32)
                 leftBarrier = true;
             else leftBarrier = false;
 
-            if ((DO & 32) == 32)
+            if ((DO & 64) == 64)
                 rightBarrier = true;
             else rightBarrier = false;           
 
@@ -90,17 +89,17 @@ namespace IOmoduls
             int temp = 0;
 
             if (redOut)
-                temp = temp | 1;
-            if (greenOut)
                 temp = temp | 2;
-            if (redIn)
+            if (greenOut)
                 temp = temp | 4;
-            if (greenIn)
+            if (redIn)
                 temp = temp | 8;
-            if (leftBarrier)
+            if (greenIn)
                 temp = temp | 16;
+            if (leftBarrier)
+                temp = temp | 32;
             if (rightBarrier)
-                temp = temp | 32;          
+                temp = temp | 64;          
 
 
             
