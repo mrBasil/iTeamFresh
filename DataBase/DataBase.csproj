@@ -54,7 +54,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AxisLimit.cs" />
+    <Compile Include="AxisLimitRepository.cs" />
     <Compile Include="Cargo.cs" />
+    <Compile Include="CargoRepository.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="Photo.cs" />

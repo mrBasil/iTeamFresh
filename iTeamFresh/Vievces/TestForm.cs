@@ -25,6 +25,7 @@ namespace iTeamFresh.Vievces
        
         private void button1_Click(object sender, EventArgs e)
         {
+            // как создать с ноля строку в таблице
             DataBase.Weighing weighing = new DataBase.Weighing() {
                 TYPE = 1,
                 STATUS = 2,

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DataBase
 {
+    /// <summary>
+    /// Класс представляющий таблицу Cargo
+    /// </summary>
     public class Cargo
     {
 

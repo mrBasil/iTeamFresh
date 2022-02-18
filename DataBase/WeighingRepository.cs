@@ -5,9 +5,16 @@ using System.Collections.Generic;
 
 namespace DataBase
 {
+    /// <summary>
+    /// Класс для работы с таблицей Weighing 
+    /// </summary>
     public class WeighingRepository
     {
         private string conectionString;
+        /// <summary>
+        /// Класс дает доступ к методам CRUD для таблици Weighing
+        /// </summary>
+        /// <param name="conectionString"> Строка подключения к базе данных </param>
         public WeighingRepository(string conectionString) {
 
             FbConnectionStringBuilder con = new FbConnectionStringBuilder()
@@ -42,7 +49,7 @@ namespace DataBase
         /// Получение всех элементов таблици Weighings в виде списка классов Weighing
         /// </summary>
         /// <returns>Список List классов Weighing </returns>
-        public List<Weighing> GetAllWeighing() {
+        public List<Weighing> GetWeighing() {
             using (FbConnection db = new FbConnection(conectionString))
             {
                 return db.Query<Weighing>("SELECT * FROM Weighings ").ToList();
