@@ -8,6 +8,9 @@ using FirebirdSql.Data.FirebirdClient;
 
 namespace DataBase
 {
+    /// <summary>
+    ///Класс для работы с таблицей PHOTOS
+    /// </summary>
     public class PhotoRepository
     {
         /// <summary>
@@ -80,6 +83,26 @@ namespace DataBase
             {
                 db.Execute("DELETE FROM PHOTOS WHERE ID = @ID", new { ID = id });
             };
+        }
+        /// <summary>
+        /// Обновдение в таблице PHOTOS
+        /// </summary>
+        /// <param name="photo"> Класс Photo</param>
+        public void UpdatePhoto(Photo photo)
+        {
+            using (FbConnection db = new FbConnection(conectionString))
+            {
+                string insertQuery = @"UPDATE PHOTOS SET 
+                                        NUMBER_CAM = @NUMBER_CAM,
+                                        ID_WEIGHING = @ID_WEIGHING,
+                                        NUMBER_WEIGHING = @NUMBER_WEIGHING,
+                                        NUMBER_TRANSPORT = @NUMBER_TRANSPORT,
+                                        IMAGE = @IMAGE
+                                        WHERE ID = @ID";
+
+                db.Execute(insertQuery, photo);
+            }
+
         }
     }
 }

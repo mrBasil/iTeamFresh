@@ -8,6 +8,9 @@ using FirebirdSql.Data.FirebirdClient;
 
 namespace DataBase
 {
+    /// <summary>
+    /// КЛас для работы с таблицей LOG
+    /// </summary>
     public class LogRepository
     {
         /// <summary>
@@ -79,6 +82,25 @@ namespace DataBase
             {
                 db.Execute("DELETE FROM LOG WHERE ID = @ID", new { ID = id });
             };
+        }
+        /// <summary>
+        /// Обновдение в таблице LOG
+        /// </summary>
+        /// <param name="log"> Класс Log</param>
+        public void UpdateLog(Log log)
+        {
+            using (FbConnection db = new FbConnection(conectionString))
+            {
+                string insertQuery = @"UPDATE LOG SET 
+                                        DATE_LOGGING = @DATE_LOGGING,
+                                        USER = @USER,
+                                        LINK_OF_CHANGE = @LINK_OF_CHANGE,
+                                        lOGGING = @lOGGING
+                                        WHERE ID = @ID";
+
+                db.Execute(insertQuery, log);
+            }
+
         }
     }
 }  

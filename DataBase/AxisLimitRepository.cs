@@ -8,11 +8,14 @@ using Dapper;
 
 namespace DataBase
 {
-    internal class AxisLimitRepository
+    /// <summary>
+    /// Класс для работы с таблицей AXIS_LIMITS
+    /// </summary>
+    public class AxisLimitRepository
     {
         private string conectionString;
         /// <summary>
-        /// Класс дает доступ к методам CRUD для таблици Weighing
+        /// Класс дает доступ к методам CRUD для таблици AXIS_LIMITS
         /// </summary>
         /// <param name="conectionString"> Строка подключения к базе данных </param>
         public AxisLimitRepository(string conectionString)
@@ -65,7 +68,7 @@ namespace DataBase
                                        WEIGHT_AXLE_9,
                                        WEIGHT_AXLE_10,
                                        NOTE)
-                                       VALUES (
+                                      VALUES (
                                        @NAME,
                                        @COUNTING_AXES,
                                        @WEIGHT_AXLE_1,

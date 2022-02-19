@@ -8,6 +8,9 @@ using FirebirdSql.Data.FirebirdClient;
 
 namespace DataBase
 {
+    /// <summary>
+    /// Класс для работы с таблицей CLIENTS
+    /// </summary>
     public class ClientRepository
     {
         /// <summary>
@@ -15,7 +18,7 @@ namespace DataBase
         /// </summary>
         private string conectionString;
         /// <summary>
-        /// Класс дает доступ к методам CRUD для таблици Clients
+        /// Класс дает доступ к методам CRUD для таблици CLIENTS
         /// </summary>
         /// <param name="conectionString"> Строка подключения к базе данных </param>
         public ClientRepository(string conectionString)
@@ -25,16 +28,15 @@ namespace DataBase
             
         }
         /// <summary>
-        /// Метод для получения строки из таблици Clients по ID
+        /// Метод для получения строки из таблици CLIENTS по ID
         /// </summary>
-        /// <param name="id"> int номер в таблице Cargo</param>
+        /// <param name="id"> int номер в таблице Client</param>
         /// <returns></returns>
-        public Cargo GetClient(int id)
+        public Client GetClient(int id)
         {
-
             using (FbConnection db = new FbConnection(conectionString))
             {
-                return db.Query<Cargo>("SELECT * FROM CLIENTS WHERE Id = @id", new { id }).FirstOrDefault();
+                return db.Query<Client>("SELECT * FROM CLIENTS WHERE Id = @id", new { id }).FirstOrDefault();
             };
         }
         /// <summary>
@@ -79,15 +81,37 @@ namespace DataBase
 
         }
         /// <summary>
-        /// Удаление строки из таблицы Clients
+        /// Удаление строки из таблицы CLIENTS
         /// </summary>
-        /// <param name="id">Идентификатор в таблице Clients</param>
+        /// <param name="id">Идентификатор в таблице CLIENTS</param>
         public void DeleteClient(int id)
         {
             using (FbConnection db = new FbConnection(conectionString))
             {
                 db.Execute("DELETE FROM CLIENTS WHERE ID = @ID", new { ID = id });
             };
+        }
+        /// <summary>
+        /// Обновдение в таблице CLIENTS
+        /// </summary>
+        /// <param name="client"> Класс Client</param>
+        public void UpdateClient(Client client)
+        {
+            using (FbConnection db = new FbConnection(conectionString))
+            {
+                string insertQuery = @"UPDATE CLIENTS SET 
+                                        NAME = @NAME,
+                                        ADDRESS = @ADDRESS,
+                                        INN = @INN,
+                                        KPP = @KPP,
+                                        OGRN = @OGRN,
+                                        EGRUL = @EGRUL,
+                                        NOTE = @NOTE
+                                        WHERE ID = @ID";
+
+                db.Execute(insertQuery,client);
+            }
+
         }
     }
 }

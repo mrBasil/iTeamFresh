@@ -6,13 +6,13 @@ using System.Collections.Generic;
 namespace DataBase
 {
     /// <summary>
-    /// Класс для работы с таблицей Weighing 
+    /// Класс для работы с таблицей WEIGHINGS
     /// </summary>
     public class WeighingRepository
     {
         private string conectionString;
         /// <summary>
-        /// Класс дает доступ к методам CRUD для таблици Weighing
+        /// Класс дает доступ к методам CRUD для таблици WEIGHINGS
         /// </summary>
         /// <param name="conectionString"> Строка подключения к базе данных </param>
         public WeighingRepository(string conectionString) {
@@ -47,7 +47,7 @@ namespace DataBase
             };
         }
         /// <summary>
-        /// Получение всех элементов таблици Weighings в виде списка классов Weighing
+        /// Получение всех элементов таблици WEIGHINGS в виде списка классов Weighing
         /// </summary>
         /// <returns>Список List классов Weighing </returns>
         public List<Weighing> GetWeighing() {
@@ -57,7 +57,7 @@ namespace DataBase
             };
         }
         /// <summary>
-        /// Вставка новой строки в таблицу Wighing
+        /// Вставка новой строки в таблицу WEIGHINGS
         /// </summary>
         /// <param name="weighing">Класс Weighing </param>
         public void InsertWeighing(Weighing weighing) {
@@ -122,16 +122,19 @@ namespace DataBase
 
         }
         /// <summary>
-        /// Удаление строки из базы Weighing
+        /// Удаление строки из базы WEIGHINGS
         /// </summary>
         /// <param name="id"> Номер ID </param>
         public void DeleteWeighing(int id) {
             using (FbConnection db = new FbConnection(conectionString))
             {
-                 db.Execute("DELETE FROM Weighings WHERE ID = @ID", new { ID = id });
+                 db.Execute("DELETE FROM WEIGHINGS WHERE ID = @ID", new { ID = id });
             };
         }
-
+        /// <summary>
+        /// Обновдение в таблице WEIGHINGS
+        /// </summary>
+        /// <param name="weighing">Экземпляр класса Weighing</param>
         public void UpdateWeighing(Weighing weighing) {
             using (FbConnection db = new FbConnection(conectionString))
             {

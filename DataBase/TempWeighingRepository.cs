@@ -8,6 +8,9 @@ using FirebirdSql.Data.FirebirdClient;
 
 namespace DataBase
 {
+    /// <summary>
+    /// КЛасс для работы с таблицей TEMP_WEIGHINGS
+    /// </summary>
     public class TempWeighingRepository
     {
         /// <summary>
@@ -98,6 +101,34 @@ namespace DataBase
             {
                 db.Execute("DELETE FROM TEMP_WEIGHINGS WHERE ID = @ID", new { ID = id });
             };
+        }
+
+        /// <summary>
+        /// Обновдение в таблице TEMP_WEIGHINGS
+        /// </summary>
+        /// <param name="tempWeighing"> Класс TempWeighing</param>
+        public void UpdateTempWeighint(TempWeighing tempWeighing)
+        {
+            using (FbConnection db = new FbConnection(conectionString))
+            {
+                string insertQuery = @"UPDATE TEMP_WEIGHINGS SET 
+                                        TIME_WEIGHING = @TIME_WEIGHING,
+                                        STATUS_WEIGHING = @STATUS_WEIGHING,
+                                        NUMBER_TRANSPORT = @NUMBER_TRANSPORT,
+                                        NUMBER_TRAILER = @NUMBER_TRAILER,
+                                        MODEL_TRANSPORT = @MODEL_TRANSPORT,
+                                        DRIVER = @DRIVER,
+                                        WEIGHT = @WEIGHT,
+                                        USER = @USER,
+                                        CARGO_SENDER_LINK = @CARGO_SENDER_LINK,
+                                        CARGO_RECIPIENT_LINK = @CARGO_RECIPIENT_LINK,
+                                        CARGO_CARRIER_LINK = @CARGO_CARRIER_LINK,
+                                        CARGO_SUPPLIER_LINK = @CARGO_SUPPLIER_LINK
+                                        WHERE ID = @ID";
+
+                db.Execute(insertQuery, tempWeighing);
+            }
+
         }
     }
 }

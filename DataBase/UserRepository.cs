@@ -8,6 +8,9 @@ using FirebirdSql.Data.FirebirdClient;
 
 namespace DataBase
 {
+    /// <summary>
+    /// Класс для работы с таблицей USERS
+    /// </summary>
     public class UserRepository
     {
         /// <summary>
@@ -80,6 +83,25 @@ namespace DataBase
             {
                 db.Execute("DELETE FROM USERS WHERE ID = @ID", new { ID = id });
             };
+        }
+        /// <summary>
+        /// Обновдение в таблице USERS
+        /// </summary>
+        /// <param name="user"> Класс TUser</param>
+        public void UpdateUser(User user)
+        {
+            using (FbConnection db = new FbConnection(conectionString))
+            {
+                string insertQuery = @"UPDATE USERS SET 
+                                        NAME = @NAME,
+                                        PASSWORD = @PASSWORD;
+                                        GROUP = @GROUP;
+                                        NOTE = @NOTE
+                                        WHERE ID = @ID";
+
+                db.Execute(insertQuery, user);
+            }
+
         }
     }
 }

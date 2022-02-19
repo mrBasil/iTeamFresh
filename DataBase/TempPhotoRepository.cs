@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Dapper;
 using FirebirdSql.Data.FirebirdClient;
 
 namespace DataBase
 {
+    /// <summary>
+    /// КЛасс для работы с таблицей TEMP_PHOTOS
+    /// </summary>
     public class TempPhotoRepository
     {
         /// <summary>
@@ -15,7 +15,7 @@ namespace DataBase
         /// </summary>
         private string conectionString;
         /// <summary>
-        /// Класс дает доступ к методам CRUD для таблици TempPhotos
+        /// Класс дает доступ к методам CRUD для таблици TEMP_PHOTOS
         /// </summary>
         /// <param name="conectionString"></param>
         public TempPhotoRepository(string conectionString)
@@ -81,5 +81,24 @@ namespace DataBase
                 db.Execute("DELETE FROM TEMP_PHOTOS WHERE ID = @ID", new { ID = id });
             };
         }
+        /// <summary>
+        /// Обновдение в таблице TEMP_PHOTOS
+        /// </summary>
+        /// <param name="tempPhoto"> Класс TempPhoto</param>
+        public void UpdateTempPhoto(TempPhoto tempPhoto)
+        {
+            using (FbConnection db = new FbConnection(conectionString))
+            {
+                string insertQuery = @"UPDATE TEMP_PHOTOS SET 
+                                        NUMBER_CAM = @NUMBER_CAM,
+                                        ID_TEMP_WEIGHING = @ID_TEMP_WEIGHING,
+                                        TEMP_IMAGE = @TEMP_IMAGE
+                                        WHERE ID = @ID";
+
+                db.Execute(insertQuery, tempPhoto);
+            }
+
+        }
+
     }
 }

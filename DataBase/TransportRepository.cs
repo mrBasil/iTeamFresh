@@ -8,6 +8,9 @@ using FirebirdSql.Data.FirebirdClient;
 
 namespace DataBase
 {
+    /// <summary>
+    /// Класс для работы с таблицей TRANSPORTS
+    /// </summary>
     public class TransportRepository
     {
         /// <summary>
@@ -102,6 +105,35 @@ namespace DataBase
             {
                 db.Execute("DELETE FROM TRANSPORTS WHERE ID = @ID", new { ID = id });
             };
+        }
+        /// <summary>
+        /// Обновдение в таблице TRANSPORTS
+        /// </summary>
+        /// <param name="transport"> Класс Transport</param>
+        public void UpdateTransport(Transport transport)
+        {
+            using (FbConnection db = new FbConnection(conectionString))
+            {
+                string insertQuery = @"UPDATE TRANSPORTS SET 
+                                        TARRA = @TARRA,
+                                        NUMBER_TRANSPORT = @NUMBER_TRANSPORT,
+                                        NUMBER_TRAILER = @NUMBER_TRAILER,
+                                        DRIVER = @DRIVER,
+                                        MODEL_TRANSPORT = @MODEL_TRANSPORT,
+                                        CARGO_LINK = @CARGO_LINK,
+                                        CARGO_SENDER_LINK = @CARGO_SENDER_LINK,
+                                        CARGO_RECIPIENT_LINK = @CARGO_RECIPIENT_LINK,
+                                        CARGO_CARRIER_LINK = @CARGO_CARRIER_LINK,
+                                        CARGO_SUPPLIER_LINK = @CARGO_SUPPLIER_LINK,
+                                        AXIS _LIMITS_LINK = @AXIS _LIMITS_LINK,
+                                        COUNTING_AXES = @COUNTING_AXES,
+                                        RFID = @RFID,
+                                        NOTE = @NOTE;
+                                        WHERE ID = @ID";
+
+                db.Execute(insertQuery, transport);
+            }
+
         }
     }
 }

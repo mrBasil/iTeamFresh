@@ -9,13 +9,13 @@ using Dapper;
 namespace DataBase
 {
     /// <summary>
-    /// Класс для работы с таблицей Cargo
+    /// Класс для работы с таблицей CARGO
     /// </summary>
     public class CargoRepository
     {
         private string conectionString;
         /// <summary>
-        /// Класс дает доступ к методам CRUD для таблици Cargo
+        /// Класс дает доступ к методам CRUD для таблици CARGO
         /// </summary>
         /// <param name="conectionString"> Строка подключения к базе данных </param>
         public CargoRepository(string conectionString)
@@ -23,9 +23,9 @@ namespace DataBase
             this.conectionString = conectionString;            
         }
         /// <summary>
-        /// Метод для получения строки из таблици Cargo по ID
+        /// Метод для получения строки из таблици CARGO по ID
         /// </summary>
-        /// <param name="id"> int номер в таблице Cargo</param>
+        /// <param name="id"> int номер в таблице CARGO</param>
         /// <returns></returns>
         public Cargo GetCargo(int id)
         {
@@ -36,7 +36,7 @@ namespace DataBase
             };
         }
         /// <summary>
-        /// Получение всех элементов таблици Cargo в виде списка классов Cargo
+        /// Получение всех элементов таблици CARGO в виде списка классов Cargo
         /// </summary>
         /// <returns>Список List классов Cargo </returns>
         public List<Cargo> GetCargo()
@@ -90,6 +90,31 @@ namespace DataBase
             {
                 db.Execute("DELETE FROM CARGO WHERE ID = @ID", new { ID = id });
             };
+        }
+        /// <summary>
+        /// Обновдение в таблице CARGO
+        /// </summary>
+        /// <param name="cargo"> Класс Cargo</param>
+        public void UpdateCargo(Cargo cargo)
+        {
+            using (FbConnection db = new FbConnection(conectionString))
+            {
+                string insertQuery = @"UPDATE CARGO SET 
+                                        NAME = @NAME,
+                                        ARTICLE_NUMBER = @ARTICLE_NUMBER,
+                                        DIRT = @DIRT,
+                                        PRICE = @PRICE,
+                                        CARGO_SENDER_LINK = @CARGO_SENDER_LINK,
+                                        CARGO_RECIPIENT_LINK = @CARGO_RECIPIENT_LINK,
+                                        CARGO_CARRIER_LINK = @CARGO_CARRIER_LINK,
+                                        CARGO_SUPPLIER_LINK = @CARGO_SUPPLIER_LINK
+                                        NOTE = @NOTE
+                                        WHERE ID = @ID";
+
+
+                db.Execute(insertQuery, cargo);
+            }
+
         }
     }
 }
