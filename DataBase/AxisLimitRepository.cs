@@ -16,23 +16,8 @@ namespace DataBase
         /// </summary>
         /// <param name="conectionString"> Строка подключения к базе данных </param>
         public AxisLimitRepository(string conectionString)
-        {
-
-            FbConnectionStringBuilder con = new FbConnectionStringBuilder()
-            {
-                DataSource = "localhost",
-                UserID = "SYSDBA",
-                Password = "masterkey",
-                Port = 3050,
-                Database = @"C:\Users\user\Desktop\for\tf_db.fdb",
-                Charset = "win1251",
-                Pooling = false
-
-            };
-            //this.conectionString = conectionString;
-            this.conectionString = con.ConnectionString;
-
-
+        {            
+            this.conectionString = conectionString;
         }
         /// <summary>
         /// Получение строки из таблици AXIS_LIMITS по id
@@ -61,7 +46,7 @@ namespace DataBase
         /// <summary>
         /// Вставка новой строки в таблицу AXIS_LIMITS
         /// </summary>
-        /// <param name="weighing">Класс AxisLimit</param>
+        /// <param name="axisLimit">Класс AxisLimit</param>
         public void InsertAxisLimit(AxisLimit axisLimit)
         {
             using (FbConnection db = new FbConnection(conectionString))

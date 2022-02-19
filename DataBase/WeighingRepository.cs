@@ -16,7 +16,7 @@ namespace DataBase
         /// </summary>
         /// <param name="conectionString"> Строка подключения к базе данных </param>
         public WeighingRepository(string conectionString) {
-
+            /*
             FbConnectionStringBuilder con = new FbConnectionStringBuilder()
             {
                 DataSource = "localhost",
@@ -28,8 +28,9 @@ namespace DataBase
                 Pooling = false
 
             };
-            //this.conectionString = conectionString;
-            this.conectionString = con.ConnectionString;
+            */
+            this.conectionString = conectionString;
+            //this.conectionString = con.ConnectionString;
 
            
         }

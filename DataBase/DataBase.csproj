@@ -58,13 +58,20 @@
     <Compile Include="Cargo.cs" />
     <Compile Include="CargoRepository.cs" />
     <Compile Include="Client.cs" />
+    <Compile Include="ClientRepository.cs" />
     <Compile Include="Log.cs" />
+    <Compile Include="LogRepository.cs" />
     <Compile Include="Photo.cs" />
+    <Compile Include="PhotoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TempPhoto.cs" />
+    <Compile Include="TempPhotoRepository.cs" />
     <Compile Include="TempWeighing.cs" />
+    <Compile Include="TempWeighingRepository.cs" />
     <Compile Include="Transport.cs" />
+    <Compile Include="TransportRepository.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="UserRepository.cs" />
     <Compile Include="Weighing.cs" />
     <Compile Include="WeighingRepository.cs" />
   </ItemGroup>

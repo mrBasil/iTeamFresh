@@ -19,21 +19,8 @@ namespace DataBase
         /// </summary>
         /// <param name="conectionString"> Строка подключения к базе данных </param>
         public CargoRepository(string conectionString)
-        {
-
-            FbConnectionStringBuilder con = new FbConnectionStringBuilder()
-            {
-                DataSource = "localhost",
-                UserID = "SYSDBA",
-                Password = "masterkey",
-                Port = 3050,
-                Database = @"C:\Users\user\Desktop\for\tf_db.fdb",
-                Charset = "win1251",
-                Pooling = false
-
-            };
-            //this.conectionString = conectionString;
-            this.conectionString = con.ConnectionString;
+        {           
+            this.conectionString = conectionString;            
         }
         /// <summary>
         /// Метод для получения строки из таблици Cargo по ID
