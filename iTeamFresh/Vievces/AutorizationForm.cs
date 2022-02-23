@@ -8,23 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
-namespace iTeamFresh
+namespace iTeamFresh.Vievces
 {
-    public partial class MainForm : Form
+    public partial class AutorizationForm : Form
     {
-        public MainForm()
+        public AutorizationForm()
         {
             InitializeComponent();
-           
-        }      
+        }
 
-
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_logIn_Click(object sender, EventArgs e)
         {
-            var test = new Vievces.WeighingsForm();
-            test.Show();
+            var weighing = new Vievces.WeighingsForm();
+            weighing.Show();
+           
         }
     }
 }

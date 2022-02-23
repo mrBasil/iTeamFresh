@@ -6,6 +6,8 @@ using System.Windows.Forms;
 
 namespace iTeamFresh
 {
+    public delegate void LangugeChange();
+
     internal static class Program
     {
         public static MainClas mc; 
@@ -20,7 +22,7 @@ namespace iTeamFresh
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new Vievces.WeighingsForm());
         }
     }
 }

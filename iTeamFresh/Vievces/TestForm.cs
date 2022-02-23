@@ -58,17 +58,17 @@ namespace iTeamFresh.Vievces
 
 
 
-            DataBase.WeighingRepository wr = new DataBase.WeighingRepository(" 123");
+            
 
-            DataBase.Weighing we = wr.GetWeighing(2);
+            DataBase.Weighing we = mc.wr.GetWeighing(2);
 
             we.DRIVER = "Tarasov S";
             we.USER_FIRST_WEIGHING = "Kolesnikov A";
             we.USER_SECOND_WEIGHING = "Matveich ";
 
-            wr.UpdateWeighing(we);
+            mc.wr.UpdateWeighing(we);
 
-            foreach (var temp in wr.GetAllWeighing()) {
+            foreach (var temp in mc.wr.GetWeighing()) {
                 Console.WriteLine(temp.DRIVER);
             }
             

@@ -106,5 +106,29 @@ namespace iTeamFresh.Properties {
                 this["indicator_time_stab"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string indicator_protocol {
+            get {
+                return ((string)(this["indicator_protocol"]));
+            }
+            set {
+                this["indicator_protocol"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string IO_device {
+            get {
+                return ((string)(this["IO_device"]));
+            }
+            set {
+                this["IO_device"] = value;
+            }
+        }
     }
 }

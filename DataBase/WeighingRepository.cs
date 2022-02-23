@@ -2,6 +2,7 @@
 using System.Linq;
 using Dapper;
 using System.Collections.Generic;
+using System;
 
 namespace DataBase
 {
@@ -34,6 +35,13 @@ namespace DataBase
 
            
         }
+
+
+
+
+
+        //********************************* Получение  из таблици ****************
+
         /// <summary>
         /// Получение взвешивания по id
         /// </summary>
@@ -46,6 +54,7 @@ namespace DataBase
                 return db.Query<Weighing>("SELECT * FROM Weighings WHERE Id = @id", new { id }).FirstOrDefault();
             };
         }
+
         /// <summary>
         /// Получение всех элементов таблици WEIGHINGS в виде списка классов Weighing
         /// </summary>
@@ -56,10 +65,34 @@ namespace DataBase
                 return db.Query<Weighing>("SELECT * FROM Weighings ").ToList();
             };
         }
+
+        /// <summary>
+        /// Возвращает список взвешиваний между датами
+        /// </summary>
+        /// <param name="firstWeighing">Дата начала запроса</param>
+        /// <param name="secondWeighing">Дата конца запроса</param>
+        /// <returns></returns>
+        public List<Weighing> GetWeighing(DateTime firstWeighing, DateTime secondWeighing) {
+            string date1 = firstWeighing.ToString();
+            string date2 = secondWeighing.ToString();
+
+            using (FbConnection db = new FbConnection(conectionString))
+            {
+                return db.Query<Weighing>("SELECT * FROM Weighings WHERE DATE_FIRST_WEIGHING >= @date1 AND DATE_SECOND_WEIGHING <= @date2", new { date1, date2 }).ToList();
+            };
+
+        }
+
+
+
+
+        //********************************* Вставка в таблицу ****************
+
+
         /// <summary>
         /// Вставка новой строки в таблицу WEIGHINGS
         /// </summary>
-        /// <param name="weighing">Класс Weighing </param>
+        /// <param name="weighing">Класс Weighing </param>        
         public void InsertWeighing(Weighing weighing) {
             using (FbConnection db = new FbConnection(conectionString))
             {

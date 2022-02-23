@@ -45,7 +45,7 @@
             // lb_weight
             // 
             this.lb_weight.AutoSize = true;
-            this.lb_weight.Location = new System.Drawing.Point(282, 59);
+            this.lb_weight.Location = new System.Drawing.Point(169, 128);
             this.lb_weight.Name = "lb_weight";
             this.lb_weight.Size = new System.Drawing.Size(52, 13);
             this.lb_weight.TabIndex = 1;

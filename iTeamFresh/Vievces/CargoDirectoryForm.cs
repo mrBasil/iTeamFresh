@@ -7,24 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataBase;
 
-
-namespace iTeamFresh
+namespace iTeamFresh.Vievces
 {
-    public partial class MainForm : Form
+    public partial class CargoDirectoryForm : Form
     {
-        public MainForm()
+        MainClas mc = Program.mc;
+       
+
+        public CargoDirectoryForm()
         {
             InitializeComponent();
-           
-        }      
+            var cargoRepo = mc.GetCargoRepository();
 
+            dataGridView1.DataSource = cargoRepo.GetCargo() ;
 
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var test = new Vievces.WeighingsForm();
-            test.Show();
         }
     }
 }

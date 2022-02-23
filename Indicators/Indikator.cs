@@ -15,7 +15,7 @@ namespace Indicators
         /// <summary>
         /// Интервал времени на установление стабильности в милли секундах 
         /// </summary>
-        /// hjhjhj
+        
         public abstract int IntervalStab { get; set; }
 
         public abstract SerialPort ComPort { get; set; }

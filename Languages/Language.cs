@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace Languages
 {
+    /// <summary>
+    /// Класс описывающий языковые контролы
+    /// </summary>
     public abstract class Language
     {
+        // Языковые метки для  Weighing Form --- *********************************************** ---
+
         /// <summary>
         /// Вес
         /// </summary>
@@ -24,6 +29,17 @@ namespace Languages
         /// Кнопка сохранить
         /// </summary>
         public abstract string btnSave { get; }
+        /// <summary>
+        /// Меню Weighing
+        /// </summary>
+        public abstract string menueToolStripMenuItem { get; }
+        public abstract string settingsToolStripMenuItem { get; }
+        public abstract string logToolStripMenuItem { get; }
+        public abstract string exitToolStripMenuItem { get; }
+
+        // Языковые метки для Settings Form ---*******************************************---
+
+
     }
 
 }
