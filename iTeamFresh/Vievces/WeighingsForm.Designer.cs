@@ -52,9 +52,8 @@
             this.lb_weight = new System.Windows.Forms.Label();
             this.pictureBox_logo = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.weighingDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dATEFIRSTWEIGHINGDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dATESECONDWEIGHINGDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.wEIGHTFIRSTWEIGHINGDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,6 +77,7 @@
             this.uSERSECONDWEIGHINGDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nUMBEROFDOCUMNETDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sERIESOFDOCUMENTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.weighingDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menue.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.weighingPage.SuspendLayout();
@@ -111,21 +111,21 @@
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.settingsToolStripMenuItem.Text = "Settings*";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // logToolStripMenuItem
             // 
             this.logToolStripMenuItem.Name = "logToolStripMenuItem";
-            this.logToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.logToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logToolStripMenuItem.Text = "Log*";
             this.logToolStripMenuItem.Click += new System.EventHandler(this.logToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit*";
             // 
             // directoryToolStripMenuItem
@@ -141,21 +141,21 @@
             // clientsToolStripMenuItem
             // 
             this.clientsToolStripMenuItem.Name = "clientsToolStripMenuItem";
-            this.clientsToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.clientsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clientsToolStripMenuItem.Text = "Clients*";
             this.clientsToolStripMenuItem.Click += new System.EventHandler(this.clientsToolStripMenuItem_Click);
             // 
             // cargoToolStripMenuItem
             // 
             this.cargoToolStripMenuItem.Name = "cargoToolStripMenuItem";
-            this.cargoToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.cargoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cargoToolStripMenuItem.Text = "Cargo*";
             this.cargoToolStripMenuItem.Click += new System.EventHandler(this.cargoToolStripMenuItem_Click);
             // 
             // transportToolStripMenuItem
             // 
             this.transportToolStripMenuItem.Name = "transportToolStripMenuItem";
-            this.transportToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.transportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.transportToolStripMenuItem.Text = "Transport*";
             // 
             // tabControl1
@@ -319,21 +319,17 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Temp Label LOGO";
             // 
-            // weighingDTOBindingSource
+            // TYPE
             // 
-            this.weighingDTOBindingSource.DataSource = typeof(DataBase.WeighingDTO);
+            this.TYPE.DataPropertyName = "TYPE";
+            this.TYPE.HeaderText = "TYPE";
+            this.TYPE.Name = "TYPE";
             // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
             this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            // 
-            // TYPE
-            // 
-            this.TYPE.DataPropertyName = "TYPE";
-            this.TYPE.HeaderText = "TYPE";
-            this.TYPE.Name = "TYPE";
             // 
             // dATEFIRSTWEIGHINGDataGridViewTextBoxColumn
             // 
@@ -472,6 +468,10 @@
             this.sERIESOFDOCUMENTDataGridViewTextBoxColumn.DataPropertyName = "SERIES_OF_DOCUMENT";
             this.sERIESOFDOCUMENTDataGridViewTextBoxColumn.HeaderText = "SERIES_OF_DOCUMENT";
             this.sERIESOFDOCUMENTDataGridViewTextBoxColumn.Name = "sERIESOFDOCUMENTDataGridViewTextBoxColumn";
+            // 
+            // weighingDTOBindingSource
+            // 
+            this.weighingDTOBindingSource.DataSource = typeof(DataBase.WeighingDTO);
             // 
             // WeighingsForm
             // 

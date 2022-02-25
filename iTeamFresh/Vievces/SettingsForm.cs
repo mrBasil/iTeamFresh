@@ -22,6 +22,8 @@ namespace iTeamFresh.Vievces
             InitializeComponent();
 
             InitSettingsControlsIndicator();
+            InitSettingsControlsIO();
+            InitSettingsDataBase();
         }
 
         /// <summary>
@@ -54,7 +56,7 @@ namespace iTeamFresh.Vievces
                 settings.indicator_protoсol = comboBox_Idic_prot.SelectedIndex;
                 settings.indicator_time_stab = Convert.ToInt32(num_time_stab.Value);
                 settings.indicator_buadeRate = int.Parse(comboBox_com_budeRate.SelectedItem.ToString());
-
+                settings.Save();
             }
            else {
                 MessageBox.Show("В поле COM порт пусто");
@@ -74,16 +76,57 @@ namespace iTeamFresh.Vievces
         private void InitSettingsControlsIO()
         {
             var settings = Properties.Settings.Default;
-            comboBox_com_IO.Items.Add(DeviceIO.devicesName);
+            comboBox_device_IO.Items.AddRange(DeviceIO.devicesName);
+            comboBox_device_IO.SelectedItem = settings.IO_device;
+
+            comboBox_com_IO.Items.AddRange(SerialPort.GetPortNames());
+            comboBox_com_IO.SelectedItem = settings.IO_com;
+
+            comboBox_BuadeRate_IO.Items.AddRange(new string[] { "9600", "19200", "38400", "4800" });
+            comboBox_BuadeRate_IO.SelectedItem = settings.IO_budeRate.ToString();
+
             
-
-            comboBox_com_IO.Items.Add(SerialPort.GetPortNames());
-            comboBox_BuadeRate_IO.Items.Add(new string[] { "9600", "19200", "38400", "4800" });
-
         }
         private void btn_save_IO_Click(object sender, EventArgs e)
         {
+            var settings = Properties.Settings.Default;
 
+            if (comboBox_com_IO.SelectedItem != null)
+            {
+                settings.IO_com = comboBox_com_IO.SelectedItem.ToString();
+                settings.IO_budeRate = int.Parse(comboBox_BuadeRate_IO.SelectedItem.ToString());
+                settings.IO_device = comboBox_device_IO.SelectedItem.ToString();
+                settings.Save();
+            }
+            else {
+
+                MessageBox.Show("Поле ком порт пусто");
+            }
+        }
+        // ******************* -------------- DataBase --------------- ***********************
+        private void InitSettingsDataBase() {
+            var settings = Properties.Settings.Default;
+            tb_path.Text = settings.path_DB;
+        }
+        private void btn_file_Click(object sender, EventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog();
+            openFileDialog.ShowDialog();
+            tb_path.Text = openFileDialog.FileName;
+        }
+
+        private void btn_save_DB_page_Click(object sender, EventArgs e)
+        {
+            var settings = Properties.Settings.Default;
+            if (tb_path.Text.Length > 0) { 
+                settings.path_DB = tb_path.Text;
+                settings.Save();
+            }
+            else
+            {
+
+                MessageBox.Show("Путь к базе данных не выбран");
+            }
         }
     }
 }

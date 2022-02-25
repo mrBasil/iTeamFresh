@@ -24,10 +24,13 @@
       <Value Profile="(Default)">3</Value>
     </Setting>
     <Setting Name="indicator_protocol" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">rr</Value>
     </Setting>
     <Setting Name="IO_device" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">rr</Value>
+    </Setting>
+    <Setting Name="path_DB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rr</Value>
     </Setting>
   </Settings>
 </SettingsFile>
