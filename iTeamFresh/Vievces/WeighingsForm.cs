@@ -36,15 +36,11 @@ namespace iTeamFresh.Vievces
         /// </summary>
         private void LoadDataInDataGride(object sender, EventArgs e) {
             //Console.WriteLine("Метод LoadDataInDataGride сработал ");
-            try
-            {
+            
                 weighingRepository = mc.GetWeighingRepository();
-                dataGridView1.DataSource = weighingRepository.GetWeighing(monthCalendar.SelectionStart, monthCalendar.SelectionEnd);
-            }
-            catch
-            {
-                MessageBox.Show("Неполадки с базой данных");
-            }
+                dataGridView1.DataSource = weighingRepository.GetWeighingDTO(monthCalendar.SelectionStart, monthCalendar.SelectionEnd);
+            
+            
         }
 
 

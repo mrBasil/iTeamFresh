@@ -73,6 +73,7 @@
     <Compile Include="User.cs" />
     <Compile Include="UserRepository.cs" />
     <Compile Include="Weighing.cs" />
+    <Compile Include="WeighingDTO.cs" />
     <Compile Include="WeighingRepository.cs" />
   </ItemGroup>
   <ItemGroup>

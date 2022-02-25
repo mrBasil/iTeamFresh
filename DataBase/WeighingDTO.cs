@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace DataBase
 {
-    /// <summary>
-    /// Клас представляет строку из таблици Weighings
-    /// </summary>
-    public class Weighing
+    public class WeighingDTO
     {
+
         /// <summary>
         /// Идентификатор
         /// </summary>
@@ -86,23 +84,23 @@ namespace DataBase
         /// <summary>
         /// ссылка на справочник груза
         /// </summary>
-        public int? CARGO_LINK { get; set; }
+        public string Cargo { get; set; }
         /// <summary>
         /// отправитель - справочник клиентов
         /// </summary>
-        public int? CARGO_SENDER_LINK { get; set; }
+        public string Sender{ get; set; }
         /// <summary>
         /// получатель - справочник клиентов
         /// </summary>
-        public int? CARGO_RECIPIENT_LINK { get; set; }
+        public string Recipient { get; set; }
         /// <summary>
         /// перевозчик - справочник клиентов
         /// </summary>
-        public int? CARGO_CARRIER_LINK { get; set; }
+        public string Carrier { get; set; }
         /// <summary>
         /// поставщик - справочник клиентов
         /// </summary>
-        public int? CARGO_SUPPLIER_LINK { get; set; }
+        public string Suplier { get; set; }
         /// <summary>
         /// имя пользователя первого взвешивания
         /// </summary>
@@ -119,7 +117,5 @@ namespace DataBase
         /// серия документа взвешивания
         /// </summary>
         public string SERIES_OF_DOCUMENT { get; set; }
-        
-        
     }
 }

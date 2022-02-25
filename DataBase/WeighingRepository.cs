@@ -82,6 +82,57 @@ namespace DataBase
             };
 
         }
+        /// <summary>
+        /// Возвращает список WeighingDTO для отображения на главной странице
+        /// </summary>
+        /// <param name="firstWeighing"></param>
+        /// <param name="secondWeighing"></param>
+        /// <returns></returns>
+        public List<WeighingDTO> GetWeighingDTO(DateTime firstWeighing, DateTime secondWeighing) {
+            string date1 = firstWeighing.ToString();
+            string date2 = secondWeighing.ToString();
+
+            string insertQuery = @"SELECT
+                                       w.TYPE,
+                                       w.ID,
+                                       w.STATUS,
+                                       w.MODE_WEIGHING,  
+                                       w.DATE_FIRST_WEIGHING,
+                                       w.DATE_SECOND_WEIGHING,
+                                       w.WEIGHT_FIRST_WEIGHING,
+                                       w.WEIGHT_SECOND_WEIGHING,
+                                       w.WEIGHT_TARRA,
+                                       w.WEIGHT_BRUTTO,
+                                       w.WEIGHT_NETTO,
+                                       w.DIRT,
+                                       w.PRICE_WEIGHTED_CARGO,
+                                       w.PRICE_FOR_CARGO_CALCULATION,
+                                       w.NUMBER_TRANSPORT,
+                                       w.NUMBER_TRAILER,
+                                       w.MODEL_TRANSPORT,
+                                       w.DRIVER,                                       
+                                       w.USER_FIRST_WEIGHING,
+                                       w.USER_SECOND_WEIGHING,
+                                       w.NUMBER_OF_DOCUMNET,
+                                       w.SERIES_OF_DOCUMENT,
+                                       c.NAME AS Cargo,
+                                       cl1.Name AS Sender,
+                                       cl2.Name AS Recipient,
+                                       cl3.NAME AS Carrier,
+                                       cl4.NAME AS Suplier
+                                    FROM Weighings w 
+                                        INNER JOIN CARGO c ON c.ID = w.CARGO_LINK 
+                                        INNER JOIN CLIENTS cl1 ON cl1.ID = w.CARGO_SENDER_LINK
+                                        INNER JOIN CLIENTS cl2 ON cl2.ID = w.CARGO_RECIPIENT_LINK
+                                        INNER JOIN CLIENTS cl3 ON cl3.ID = w.CARGO_CARRIER_LINK
+                                        INNER JOIN CLIENTS cl4 ON cl4.ID = w.CARGO_SUPPLIER_LINK                                    
+                                    WHERE DATE_FIRST_WEIGHING >= @date1 AND DATE_SECOND_WEIGHING <= @date2";
+
+            using (FbConnection db = new FbConnection(conectionString))
+            {
+                return db.Query<WeighingDTO>(insertQuery, new { date1, date2 }).ToList();
+            };
+        }
 
 
 

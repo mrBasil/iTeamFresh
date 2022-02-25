@@ -48,11 +48,20 @@ namespace iTeamFresh.Vievces
         {
             var settings = Properties.Settings.Default;
 
-            settings.indicator_protoсol = comboBox_Idic_prot.SelectedIndex;
-            settings.indicator_time_stab = Convert.ToInt32(num_time_stab.Value);
-            settings.indicator_com = comboBox_com.SelectedItem.ToString();
-            settings.indicator_buadeRate = int.Parse(comboBox_com_budeRate.SelectedItem.ToString());
+            if(comboBox_com.SelectedItem != null)
+            {
+                settings.indicator_com = comboBox_com.SelectedItem.ToString();
+                settings.indicator_protoсol = comboBox_Idic_prot.SelectedIndex;
+                settings.indicator_time_stab = Convert.ToInt32(num_time_stab.Value);
+                settings.indicator_buadeRate = int.Parse(comboBox_com_budeRate.SelectedItem.ToString());
 
+            }
+           else {
+                MessageBox.Show("В поле COM порт пусто");
+            }
+            
+
+            
         }
 
 
