@@ -104,6 +104,7 @@ namespace iTeamFresh.Vievces
             }
         }
         // ******************* -------------- DataBase --------------- ***********************
+        
         private void InitSettingsDataBase() {
             var settings = Properties.Settings.Default;
             tb_path.Text = settings.path_DB;

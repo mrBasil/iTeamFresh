@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DataBase
 {
+    /// <summary>
+    /// Класс для отображенияданных на главном экране
+    /// </summary>
     public class WeighingDTO
     {
 
