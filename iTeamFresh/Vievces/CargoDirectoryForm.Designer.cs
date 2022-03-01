@@ -33,11 +33,7 @@
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cargoDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.senderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.recipientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carrierDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.suplierDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cargoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aRTICLENUMBERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,7 +45,7 @@
             this.cARGOSUPPLIERLINKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nOTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cargoDTOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cargoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_add
@@ -80,16 +76,13 @@
             this.btn_delete.TabIndex = 2;
             this.btn_delete.Text = "Delete*";
             this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.senderDataGridViewTextBoxColumn,
-            this.recipientDataGridViewTextBoxColumn,
-            this.carrierDataGridViewTextBoxColumn,
-            this.suplierDataGridViewTextBoxColumn,
             this.iDDataGridViewTextBoxColumn,
             this.nAMEDataGridViewTextBoxColumn,
             this.aRTICLENUMBERDataGridViewTextBoxColumn,
@@ -100,43 +93,15 @@
             this.cARGOCARRIERLINKDataGridViewTextBoxColumn,
             this.cARGOSUPPLIERLINKDataGridViewTextBoxColumn,
             this.nOTEDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.cargoDTOBindingSource;
+            this.dataGridView1.DataSource = this.cargoBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(30, 63);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(788, 298);
             this.dataGridView1.TabIndex = 3;
             // 
-            // cargoDTOBindingSource
+            // cargoBindingSource
             // 
-            this.cargoDTOBindingSource.DataSource = typeof(DataBase.CargoDTO);
-            // 
-            // senderDataGridViewTextBoxColumn
-            // 
-            this.senderDataGridViewTextBoxColumn.DataPropertyName = "Sender";
-            this.senderDataGridViewTextBoxColumn.HeaderText = "Sender";
-            this.senderDataGridViewTextBoxColumn.Name = "senderDataGridViewTextBoxColumn";
-            this.senderDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // recipientDataGridViewTextBoxColumn
-            // 
-            this.recipientDataGridViewTextBoxColumn.DataPropertyName = "Recipient";
-            this.recipientDataGridViewTextBoxColumn.HeaderText = "Recipient";
-            this.recipientDataGridViewTextBoxColumn.Name = "recipientDataGridViewTextBoxColumn";
-            this.recipientDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // carrierDataGridViewTextBoxColumn
-            // 
-            this.carrierDataGridViewTextBoxColumn.DataPropertyName = "Carrier";
-            this.carrierDataGridViewTextBoxColumn.HeaderText = "Carrier";
-            this.carrierDataGridViewTextBoxColumn.Name = "carrierDataGridViewTextBoxColumn";
-            this.carrierDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // suplierDataGridViewTextBoxColumn
-            // 
-            this.suplierDataGridViewTextBoxColumn.DataPropertyName = "Suplier";
-            this.suplierDataGridViewTextBoxColumn.HeaderText = "Suplier";
-            this.suplierDataGridViewTextBoxColumn.Name = "suplierDataGridViewTextBoxColumn";
-            this.suplierDataGridViewTextBoxColumn.Visible = false;
+            this.cargoBindingSource.DataSource = typeof(DataBase.Cargo);
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -216,7 +181,7 @@
             this.Name = "CargoDirectoryForm";
             this.Text = "CargoDirectoryForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cargoDTOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cargoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -227,11 +192,7 @@
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource cargoDTOBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn senderDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn recipientDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn carrierDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn suplierDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource cargoBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn aRTICLENUMBERDataGridViewTextBoxColumn;

@@ -11,7 +11,7 @@ namespace DataBase
         /// <summary>
         /// идентификатор
         /// </summary>
-        public int ID { get; set; }
+        public int? ID { get; set; }
         /// <summary>
         /// название организации
         /// </summary>

@@ -35,19 +35,19 @@ namespace DataBase
         /// <summary>
         /// отправитель - справочник клиентов
         /// </summary>
-        public int CARGO_SENDER_LINK { get; set; }
+        public int? CARGO_SENDER_LINK { get; set; }
         /// <summary>
         /// получатель - справочник клиентов
         /// </summary>
-        public int CARGO_RECIPIENT_LINK { get; set; }
+        public int? CARGO_RECIPIENT_LINK { get; set; }
         /// <summary>
         /// перевозчик - справочник клиентов
         /// </summary>
-        public int CARGO_CARRIER_LINK { get; set; }
+        public int? CARGO_CARRIER_LINK { get; set; }
         /// <summary>
         /// поставщик - справочник клиентов
         /// </summary>
-        public int CARGO_SUPPLIER_LINK { get; set; }
+        public int? CARGO_SUPPLIER_LINK { get; set; }
         /// <summary>
         /// примечание к записи
         /// </summary>
