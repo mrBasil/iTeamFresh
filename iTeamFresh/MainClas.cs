@@ -123,5 +123,9 @@ namespace iTeamFresh
         public WeighingRepository GetWeighingRepository() {
             return new WeighingRepository(con.ConnectionString);
         }
+
+        public ClientRepository GetClientRepository() {
+            return new ClientRepository(con.ConnectionString);
+        }
     }
 }

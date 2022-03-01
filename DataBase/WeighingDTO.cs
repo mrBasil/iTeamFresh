@@ -9,81 +9,10 @@ namespace DataBase
     /// <summary>
     /// Класс для отображенияданных на главном экране
     /// </summary>
-    public class WeighingDTO
+    public class WeighingDTO:Weighing
     {
 
-        /// <summary>
-        /// Идентификатор
-        /// </summary>
-        public int? ID { get; set; }
-        /// <summary>
-        /// тип взвешивани (ручной / автоматический )
-        /// </summary>
-        public int? TYPE { get; set; }
-        /// <summary>
-        /// статус взвешивания ( в процессе / готов )
-        /// </summary>
-        public int? STATUS { get; set; }
-        /// <summary>
-        /// режим взвешивания ( статика / динамика) 
-        /// </summary>
-        public int? MODE_WEIGHING { get; set; }
-        /// <summary>
-        /// дата первого взвешивания
-        /// </summary>
-        public DateTime DATE_FIRST_WEIGHING { get; set; }
-        /// <summary>
-        /// дата второго взвешивания
-        /// </summary>
-        public DateTime DATE_SECOND_WEIGHING { get; set; }
-        /// <summary>
-        /// вес первого взвешивания
-        /// </summary>
-        public int? WEIGHT_FIRST_WEIGHING { get; set; }
-        /// <summary>
-        /// вес второго взвешивания
-        /// </summary>
-        public int? WEIGHT_SECOND_WEIGHING { get; set; }
-        /// <summary>
-        /// вес тарры
-        /// </summary>
-        public int? WEIGHT_TARRA { get; set; }
-        /// <summary>
-        /// вес брутто
-        /// </summary>
-        public int? WEIGHT_BRUTTO { get; set; }
-        /// <summary>
-        /// вес нетто
-        /// </summary>
-        public int? WEIGHT_NETTO { get; set; }
-        /// <summary>
-        /// сорность в %
-        /// </summary>
-        public float? DIRT { get; set; }
-        /// <summary>
-        /// цена взвешенного груза
-        /// </summary>
-        public float? PRICE_WEIGHTED_CARGO { get; set; }
-        /// <summary>
-        /// цена для расчета груза
-        /// </summary>
-        public float? PRICE_FOR_CARGO_CALCULATION { get; set; }
-        /// <summary>
-        /// номер ТС
-        /// </summary>
-        public string NUMBER_TRANSPORT { get; set; }
-        /// <summary>
-        /// номер прицепа
-        /// </summary>
-        public string NUMBER_TRAILER { get; set; }
-        /// <summary>
-        /// Модель траспорта
-        /// </summary>
-        public string MODEL_TRANSPORT { get; set; }
-        /// <summary>
-        /// Имя водителя
-        /// </summary>
-        public string DRIVER { get; set; }
+        
         /// <summary>
         /// ссылка на справочник груза
         /// </summary>
@@ -104,21 +33,6 @@ namespace DataBase
         /// поставщик - справочник клиентов
         /// </summary>
         public string Suplier { get; set; }
-        /// <summary>
-        /// имя пользователя первого взвешивания
-        /// </summary>
-        public string USER_FIRST_WEIGHING { get; set; }
-        /// <summary>
-        /// имя пользователя второго взвешивания
-        /// </summary>
-        public string USER_SECOND_WEIGHING { get; set; }
-        /// <summary>
-        /// номер документа взвешивания
-        /// </summary>
-        public int? NUMBER_OF_DOCUMNET { get; set; }
-        /// <summary>
-        /// серия документа взвешивания
-        /// </summary>
-        public string SERIES_OF_DOCUMENT { get; set; }
+       
     }
 }
