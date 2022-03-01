@@ -13,15 +13,36 @@ namespace iTeamFresh.Vievces
 {
     public partial class CargoDirectoryForm : Form
     {
-        MainClas mc = Program.mc;
-       
+       MainClas mc = Program.mc;
+        CargoRepository cargoRepository; 
 
         public CargoDirectoryForm()
         {
             InitializeComponent();
-            var cargoRepo = mc.GetCargoRepository();
+            cargoRepository = mc.GetCargoRepository();
 
-            dataGridView1.DataSource = cargoRepo.GetCargo() ;
+            dataGridView1.DataSource = cargoRepository.GetCargoDTO() ;
+
+        }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            
+            List<CargoDTO> tempList = cargoRepository.GetCargoDTO();
+            tempList.Add(new CargoDTO());
+            dataGridView1.DataSource = tempList;
+
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            var tempCargo = (List<CargoDTO>)dataGridView1.DataSource;
+            Cargo t = tempCargo[tempCargo.Count - 1];
+            cargoRepository.InsertCargo(t);
+
+            List<CargoDTO> tempList = cargoRepository.GetCargoDTO();
+            tempList.Add(new CargoDTO());
+            dataGridView1.DataSource = tempList;
 
         }
     }

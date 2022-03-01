@@ -32,9 +32,12 @@
             this.btn_add = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
-            this.cargoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cargoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.cargoDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.senderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.recipientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carrierDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.suplierDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aRTICLENUMBERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,47 +48,48 @@
             this.cARGOCARRIERLINKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cARGOSUPPLIERLINKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nOTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.cargoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cargoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cargoDTOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(3, 3);
+            this.btn_add.Location = new System.Drawing.Point(30, 31);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(75, 23);
             this.btn_add.TabIndex = 0;
             this.btn_add.Text = "add*";
             this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(85, 2);
+            this.btn_save.Location = new System.Drawing.Point(111, 31);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(75, 23);
             this.btn_save.TabIndex = 1;
             this.btn_save.Text = "Save*";
             this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(166, 3);
+            this.btn_delete.Location = new System.Drawing.Point(192, 31);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(75, 23);
             this.btn_delete.TabIndex = 2;
             this.btn_delete.Text = "Delete*";
             this.btn_delete.UseVisualStyleBackColor = true;
             // 
-            // cargoBindingSource
-            // 
-            this.cargoBindingSource.DataSource = typeof(DataBase.Cargo);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.senderDataGridViewTextBoxColumn,
+            this.recipientDataGridViewTextBoxColumn,
+            this.carrierDataGridViewTextBoxColumn,
+            this.suplierDataGridViewTextBoxColumn,
             this.iDDataGridViewTextBoxColumn,
             this.nAMEDataGridViewTextBoxColumn,
             this.aRTICLENUMBERDataGridViewTextBoxColumn,
@@ -96,21 +100,50 @@
             this.cARGOCARRIERLINKDataGridViewTextBoxColumn,
             this.cARGOSUPPLIERLINKDataGridViewTextBoxColumn,
             this.nOTEDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.cargoBindingSource1;
+            this.dataGridView1.DataSource = this.cargoDTOBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(30, 63);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(788, 298);
             this.dataGridView1.TabIndex = 3;
             // 
-            // cargoBindingSource1
+            // cargoDTOBindingSource
             // 
-            this.cargoBindingSource1.DataSource = typeof(DataBase.Cargo);
+            this.cargoDTOBindingSource.DataSource = typeof(DataBase.CargoDTO);
+            // 
+            // senderDataGridViewTextBoxColumn
+            // 
+            this.senderDataGridViewTextBoxColumn.DataPropertyName = "Sender";
+            this.senderDataGridViewTextBoxColumn.HeaderText = "Sender";
+            this.senderDataGridViewTextBoxColumn.Name = "senderDataGridViewTextBoxColumn";
+            this.senderDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // recipientDataGridViewTextBoxColumn
+            // 
+            this.recipientDataGridViewTextBoxColumn.DataPropertyName = "Recipient";
+            this.recipientDataGridViewTextBoxColumn.HeaderText = "Recipient";
+            this.recipientDataGridViewTextBoxColumn.Name = "recipientDataGridViewTextBoxColumn";
+            this.recipientDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // carrierDataGridViewTextBoxColumn
+            // 
+            this.carrierDataGridViewTextBoxColumn.DataPropertyName = "Carrier";
+            this.carrierDataGridViewTextBoxColumn.HeaderText = "Carrier";
+            this.carrierDataGridViewTextBoxColumn.Name = "carrierDataGridViewTextBoxColumn";
+            this.carrierDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // suplierDataGridViewTextBoxColumn
+            // 
+            this.suplierDataGridViewTextBoxColumn.DataPropertyName = "Suplier";
+            this.suplierDataGridViewTextBoxColumn.HeaderText = "Suplier";
+            this.suplierDataGridViewTextBoxColumn.Name = "suplierDataGridViewTextBoxColumn";
+            this.suplierDataGridViewTextBoxColumn.Visible = false;
             // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
             this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.Width = 50;
             // 
             // nAMEDataGridViewTextBoxColumn
             // 
@@ -141,30 +174,35 @@
             this.cARGOSENDERLINKDataGridViewTextBoxColumn.DataPropertyName = "CARGO_SENDER_LINK";
             this.cARGOSENDERLINKDataGridViewTextBoxColumn.HeaderText = "CARGO_SENDER_LINK";
             this.cARGOSENDERLINKDataGridViewTextBoxColumn.Name = "cARGOSENDERLINKDataGridViewTextBoxColumn";
+            this.cARGOSENDERLINKDataGridViewTextBoxColumn.Visible = false;
             // 
             // cARGORECIPIENTLINKDataGridViewTextBoxColumn
             // 
             this.cARGORECIPIENTLINKDataGridViewTextBoxColumn.DataPropertyName = "CARGO_RECIPIENT_LINK";
             this.cARGORECIPIENTLINKDataGridViewTextBoxColumn.HeaderText = "CARGO_RECIPIENT_LINK";
             this.cARGORECIPIENTLINKDataGridViewTextBoxColumn.Name = "cARGORECIPIENTLINKDataGridViewTextBoxColumn";
+            this.cARGORECIPIENTLINKDataGridViewTextBoxColumn.Visible = false;
             // 
             // cARGOCARRIERLINKDataGridViewTextBoxColumn
             // 
             this.cARGOCARRIERLINKDataGridViewTextBoxColumn.DataPropertyName = "CARGO_CARRIER_LINK";
             this.cARGOCARRIERLINKDataGridViewTextBoxColumn.HeaderText = "CARGO_CARRIER_LINK";
             this.cARGOCARRIERLINKDataGridViewTextBoxColumn.Name = "cARGOCARRIERLINKDataGridViewTextBoxColumn";
+            this.cARGOCARRIERLINKDataGridViewTextBoxColumn.Visible = false;
             // 
             // cARGOSUPPLIERLINKDataGridViewTextBoxColumn
             // 
             this.cARGOSUPPLIERLINKDataGridViewTextBoxColumn.DataPropertyName = "CARGO_SUPPLIER_LINK";
             this.cARGOSUPPLIERLINKDataGridViewTextBoxColumn.HeaderText = "CARGO_SUPPLIER_LINK";
             this.cARGOSUPPLIERLINKDataGridViewTextBoxColumn.Name = "cARGOSUPPLIERLINKDataGridViewTextBoxColumn";
+            this.cARGOSUPPLIERLINKDataGridViewTextBoxColumn.Visible = false;
             // 
             // nOTEDataGridViewTextBoxColumn
             // 
             this.nOTEDataGridViewTextBoxColumn.DataPropertyName = "NOTE";
             this.nOTEDataGridViewTextBoxColumn.HeaderText = "NOTE";
             this.nOTEDataGridViewTextBoxColumn.Name = "nOTEDataGridViewTextBoxColumn";
+            this.nOTEDataGridViewTextBoxColumn.Width = 300;
             // 
             // CargoDirectoryForm
             // 
@@ -177,9 +215,8 @@
             this.Controls.Add(this.btn_add);
             this.Name = "CargoDirectoryForm";
             this.Text = "CargoDirectoryForm";
-            ((System.ComponentModel.ISupportInitialize)(this.cargoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cargoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cargoDTOBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -189,8 +226,12 @@
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Button btn_delete;
-        private System.Windows.Forms.BindingSource cargoBindingSource;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource cargoDTOBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn senderDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn recipientDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn carrierDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn suplierDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn aRTICLENUMBERDataGridViewTextBoxColumn;
@@ -201,6 +242,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cARGOCARRIERLINKDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cARGOSUPPLIERLINKDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nOTEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource cargoBindingSource1;
     }
 }

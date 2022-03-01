@@ -97,6 +97,12 @@
     <Compile Include="Vievces\CargoDirectoryForm.Designer.cs">
       <DependentUpon>CargoDirectoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vievces\CargoEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vievces\CargoEditForm.Designer.cs">
+      <DependentUpon>CargoEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vievces\ClientsDirectoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     <EmbeddedResource Include="Vievces\CargoDirectoryForm.resx">
       <DependentUpon>CargoDirectoryForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vievces\CargoEditForm.resx">
+      <DependentUpon>CargoEditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vievces\ClientsDirectoryForm.resx">
       <DependentUpon>ClientsDirectoryForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,6 +181,7 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\DataBase.Cargo.datasource" />
+    <None Include="Properties\DataSources\DataBase.CargoDTO.datasource" />
     <None Include="Properties\DataSources\DataBase.Client.datasource" />
     <None Include="Properties\DataSources\DataBase.Log.datasource" />
     <None Include="Properties\DataSources\DataBase.Weighing.datasource" />

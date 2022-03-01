@@ -56,6 +56,7 @@
     <Compile Include="AxisLimit.cs" />
     <Compile Include="AxisLimitRepository.cs" />
     <Compile Include="Cargo.cs" />
+    <Compile Include="CargoDTO.cs" />
     <Compile Include="CargoRepository.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="ClientRepository.cs" />
@@ -78,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\CargoDTO.datasource" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
