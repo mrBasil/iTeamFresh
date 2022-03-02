@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataBase;
+using iTeamFresh.Vievces;
 
 namespace iTeamFresh.Vievces
 {
@@ -25,25 +26,25 @@ namespace iTeamFresh.Vievces
             
 
         }
+        private void updateDataGrid(object sender, EventArgs e) {
+            dataGridView1.DataSource = cargoRepository.GetCargo();
+        }
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            
-            List<Cargo> tempList = cargoRepository.GetCargo();
-            tempList.Add(new Cargo());
-            dataGridView1.DataSource = tempList;
-            
+
+            Form cargoEdit = new CargoEditForm(new Cargo());
+            cargoEdit.Show();
+            cargoEdit.FormClosed += updateDataGrid;
 
         }
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            var tempCargo = (List<Cargo>)dataGridView1.DataSource;
-            Cargo t = tempCargo[tempCargo.Count - 1];
-            cargoRepository.InsertCargo(t);
-
-            List<Cargo> tempList = cargoRepository.GetCargo();            
-            dataGridView1.DataSource = tempList;
+            var cargo = dataGridView1.SelectedRows[0].DataBoundItem as Cargo;
+            Form cargoEdit = new CargoEditForm(cargo);
+            cargoEdit.Show();
+            cargoEdit.FormClosed += updateDataGrid;
 
         }
 

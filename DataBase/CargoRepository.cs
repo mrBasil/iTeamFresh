@@ -127,7 +127,7 @@ namespace DataBase
         {
             using (FbConnection db = new FbConnection(conectionString))
             {
-                string insertQuery = @"UPDATE CARGO SET 
+                string updateQuery = @"UPDATE CARGO SET 
                                         NAME = @NAME,
                                         ARTICLE_NUMBER = @ARTICLE_NUMBER,
                                         DIRT = @DIRT,
@@ -135,12 +135,12 @@ namespace DataBase
                                         CARGO_SENDER_LINK = @CARGO_SENDER_LINK,
                                         CARGO_RECIPIENT_LINK = @CARGO_RECIPIENT_LINK,
                                         CARGO_CARRIER_LINK = @CARGO_CARRIER_LINK,
-                                        CARGO_SUPPLIER_LINK = @CARGO_SUPPLIER_LINK
+                                        CARGO_SUPPLIER_LINK = @CARGO_SUPPLIER_LINK,
                                         NOTE = @NOTE
                                         WHERE ID = @ID";
 
 
-                db.Execute(insertQuery, cargo);
+                db.Execute(updateQuery, cargo);
             }
 
         }

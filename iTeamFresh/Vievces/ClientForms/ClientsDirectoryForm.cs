@@ -14,6 +14,7 @@ namespace iTeamFresh.Vievces
     public partial class ClientsDirectoryForm : Form
     {
         MainClas mc = Program.mc;
+
         ClientRepository clientRepository;
 
         public ClientsDirectoryForm()

@@ -15,7 +15,7 @@ namespace DataBase
         /// <summary>
         /// идентификатор
         /// </summary>
-        public int ID { get; set; }
+        public int? ID { get; set; }
         /// <summary>
         /// имя груза
         /// </summary>
@@ -27,11 +27,11 @@ namespace DataBase
         /// <summary>
         /// сорность %
         /// </summary>
-        public float DIRT { get; set; }
+        public float? DIRT { get; set; }
         /// <summary>
         /// цена 
         /// </summary>
-        public float PRICE { get; set; }
+        public float? PRICE { get; set; }
         /// <summary>
         /// отправитель - справочник клиентов
         /// </summary>

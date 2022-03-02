@@ -91,22 +91,22 @@
     <Compile Include="Vievces\AutorizationForm.Designer.cs">
       <DependentUpon>AutorizationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vievces\CargoDirectoryForm.cs">
+    <Compile Include="Vievces\CargoForms\CargoDirectoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vievces\CargoDirectoryForm.Designer.cs">
+    <Compile Include="Vievces\CargoForms\CargoDirectoryForm.Designer.cs">
       <DependentUpon>CargoDirectoryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vievces\CargoEditForm.cs">
+    <Compile Include="Vievces\CargoForms\CargoEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vievces\CargoEditForm.Designer.cs">
+    <Compile Include="Vievces\CargoForms\CargoEditForm.Designer.cs">
       <DependentUpon>CargoEditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vievces\ClientsDirectoryForm.cs">
+    <Compile Include="Vievces\ClientForms\ClientsDirectoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vievces\ClientsDirectoryForm.Designer.cs">
+    <Compile Include="Vievces\ClientForms\ClientsDirectoryForm.Designer.cs">
       <DependentUpon>ClientsDirectoryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Vievces\LogForm.cs">
@@ -121,10 +121,10 @@
     <Compile Include="Vievces\MnemoShemForm.Designer.cs">
       <DependentUpon>MnemoShemForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vievces\SettingsForm.cs">
+    <Compile Include="Vievces\SettingsForms\SettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vievces\SettingsForm.Designer.cs">
+    <Compile Include="Vievces\SettingsForms\SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Vievces\TestForm.cs">
@@ -155,13 +155,13 @@
     <EmbeddedResource Include="Vievces\AutorizationForm.resx">
       <DependentUpon>AutorizationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vievces\CargoDirectoryForm.resx">
+    <EmbeddedResource Include="Vievces\CargoForms\CargoDirectoryForm.resx">
       <DependentUpon>CargoDirectoryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vievces\CargoEditForm.resx">
+    <EmbeddedResource Include="Vievces\CargoForms\CargoEditForm.resx">
       <DependentUpon>CargoEditForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vievces\ClientsDirectoryForm.resx">
+    <EmbeddedResource Include="Vievces\ClientForms\ClientsDirectoryForm.resx">
       <DependentUpon>ClientsDirectoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vievces\LogForm.resx">
@@ -170,7 +170,7 @@
     <EmbeddedResource Include="Vievces\MnemoShemForm.resx">
       <DependentUpon>MnemoShemForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vievces\SettingsForm.resx">
+    <EmbeddedResource Include="Vievces\SettingsForms\SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vievces\TestForm.resx">
@@ -232,6 +232,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Vievces\TransportForms\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
