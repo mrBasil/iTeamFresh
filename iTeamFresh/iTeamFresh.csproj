@@ -103,6 +103,12 @@
     <Compile Include="Vievces\CargoForms\CargoEditForm.Designer.cs">
       <DependentUpon>CargoEditForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vievces\ClientForms\ClientEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vievces\ClientForms\ClientEditForm.Designer.cs">
+      <DependentUpon>ClientEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vievces\ClientForms\ClientsDirectoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vievces\CargoForms\CargoEditForm.resx">
       <DependentUpon>CargoEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vievces\ClientForms\ClientEditForm.resx">
+      <DependentUpon>ClientEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vievces\ClientForms\ClientsDirectoryForm.resx">
       <DependentUpon>ClientsDirectoryForm.cs</DependentUpon>

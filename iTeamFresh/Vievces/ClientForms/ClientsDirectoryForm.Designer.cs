@@ -78,6 +78,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -92,6 +94,9 @@
             this.dataGridView1.DataSource = this.clientBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 41);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(858, 397);
             this.dataGridView1.TabIndex = 3;
             // 
@@ -102,50 +107,59 @@
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.FillWeight = 50F;
             this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nAMEDataGridViewTextBoxColumn
             // 
             this.nAMEDataGridViewTextBoxColumn.DataPropertyName = "NAME";
             this.nAMEDataGridViewTextBoxColumn.HeaderText = "NAME";
             this.nAMEDataGridViewTextBoxColumn.Name = "nAMEDataGridViewTextBoxColumn";
+            this.nAMEDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // aDDRESSDataGridViewTextBoxColumn
             // 
             this.aDDRESSDataGridViewTextBoxColumn.DataPropertyName = "ADDRESS";
             this.aDDRESSDataGridViewTextBoxColumn.HeaderText = "ADDRESS";
             this.aDDRESSDataGridViewTextBoxColumn.Name = "aDDRESSDataGridViewTextBoxColumn";
+            this.aDDRESSDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // iNNDataGridViewTextBoxColumn
             // 
             this.iNNDataGridViewTextBoxColumn.DataPropertyName = "INN";
             this.iNNDataGridViewTextBoxColumn.HeaderText = "INN";
             this.iNNDataGridViewTextBoxColumn.Name = "iNNDataGridViewTextBoxColumn";
+            this.iNNDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // kPPDataGridViewTextBoxColumn
             // 
             this.kPPDataGridViewTextBoxColumn.DataPropertyName = "KPP";
             this.kPPDataGridViewTextBoxColumn.HeaderText = "KPP";
             this.kPPDataGridViewTextBoxColumn.Name = "kPPDataGridViewTextBoxColumn";
+            this.kPPDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // oGRNDataGridViewTextBoxColumn
             // 
             this.oGRNDataGridViewTextBoxColumn.DataPropertyName = "OGRN";
             this.oGRNDataGridViewTextBoxColumn.HeaderText = "OGRN";
             this.oGRNDataGridViewTextBoxColumn.Name = "oGRNDataGridViewTextBoxColumn";
+            this.oGRNDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // eGRULDataGridViewTextBoxColumn
             // 
             this.eGRULDataGridViewTextBoxColumn.DataPropertyName = "EGRUL";
             this.eGRULDataGridViewTextBoxColumn.HeaderText = "EGRUL";
             this.eGRULDataGridViewTextBoxColumn.Name = "eGRULDataGridViewTextBoxColumn";
+            this.eGRULDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nOTEDataGridViewTextBoxColumn
             // 
             this.nOTEDataGridViewTextBoxColumn.DataPropertyName = "NOTE";
             this.nOTEDataGridViewTextBoxColumn.HeaderText = "NOTE";
             this.nOTEDataGridViewTextBoxColumn.Name = "nOTEDataGridViewTextBoxColumn";
+            this.nOTEDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // ClientsDirectoryForm
             // 
@@ -170,6 +184,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource clientBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn aDDRESSDataGridViewTextBoxColumn;
@@ -178,6 +193,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn oGRNDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn eGRULDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nOTEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource clientBindingSource;
     }
 }

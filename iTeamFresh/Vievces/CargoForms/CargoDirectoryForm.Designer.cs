@@ -96,6 +96,9 @@
             this.dataGridView1.DataSource = this.cargoBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(30, 63);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(788, 298);
             this.dataGridView1.TabIndex = 3;
             // 
@@ -108,6 +111,7 @@
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
             this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
             this.iDDataGridViewTextBoxColumn.Width = 50;
             // 
             // nAMEDataGridViewTextBoxColumn
@@ -115,30 +119,36 @@
             this.nAMEDataGridViewTextBoxColumn.DataPropertyName = "NAME";
             this.nAMEDataGridViewTextBoxColumn.HeaderText = "NAME";
             this.nAMEDataGridViewTextBoxColumn.Name = "nAMEDataGridViewTextBoxColumn";
+            this.nAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nAMEDataGridViewTextBoxColumn.Width = 130;
             // 
             // aRTICLENUMBERDataGridViewTextBoxColumn
             // 
             this.aRTICLENUMBERDataGridViewTextBoxColumn.DataPropertyName = "ARTICLE_NUMBER";
             this.aRTICLENUMBERDataGridViewTextBoxColumn.HeaderText = "ARTICLE_NUMBER";
             this.aRTICLENUMBERDataGridViewTextBoxColumn.Name = "aRTICLENUMBERDataGridViewTextBoxColumn";
+            this.aRTICLENUMBERDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dIRTDataGridViewTextBoxColumn
             // 
             this.dIRTDataGridViewTextBoxColumn.DataPropertyName = "DIRT";
             this.dIRTDataGridViewTextBoxColumn.HeaderText = "DIRT";
             this.dIRTDataGridViewTextBoxColumn.Name = "dIRTDataGridViewTextBoxColumn";
+            this.dIRTDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // pRICEDataGridViewTextBoxColumn
             // 
             this.pRICEDataGridViewTextBoxColumn.DataPropertyName = "PRICE";
             this.pRICEDataGridViewTextBoxColumn.HeaderText = "PRICE";
             this.pRICEDataGridViewTextBoxColumn.Name = "pRICEDataGridViewTextBoxColumn";
+            this.pRICEDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cARGOSENDERLINKDataGridViewTextBoxColumn
             // 
             this.cARGOSENDERLINKDataGridViewTextBoxColumn.DataPropertyName = "CARGO_SENDER_LINK";
             this.cARGOSENDERLINKDataGridViewTextBoxColumn.HeaderText = "CARGO_SENDER_LINK";
             this.cARGOSENDERLINKDataGridViewTextBoxColumn.Name = "cARGOSENDERLINKDataGridViewTextBoxColumn";
+            this.cARGOSENDERLINKDataGridViewTextBoxColumn.ReadOnly = true;
             this.cARGOSENDERLINKDataGridViewTextBoxColumn.Visible = false;
             // 
             // cARGORECIPIENTLINKDataGridViewTextBoxColumn
@@ -146,6 +156,7 @@
             this.cARGORECIPIENTLINKDataGridViewTextBoxColumn.DataPropertyName = "CARGO_RECIPIENT_LINK";
             this.cARGORECIPIENTLINKDataGridViewTextBoxColumn.HeaderText = "CARGO_RECIPIENT_LINK";
             this.cARGORECIPIENTLINKDataGridViewTextBoxColumn.Name = "cARGORECIPIENTLINKDataGridViewTextBoxColumn";
+            this.cARGORECIPIENTLINKDataGridViewTextBoxColumn.ReadOnly = true;
             this.cARGORECIPIENTLINKDataGridViewTextBoxColumn.Visible = false;
             // 
             // cARGOCARRIERLINKDataGridViewTextBoxColumn
@@ -153,6 +164,7 @@
             this.cARGOCARRIERLINKDataGridViewTextBoxColumn.DataPropertyName = "CARGO_CARRIER_LINK";
             this.cARGOCARRIERLINKDataGridViewTextBoxColumn.HeaderText = "CARGO_CARRIER_LINK";
             this.cARGOCARRIERLINKDataGridViewTextBoxColumn.Name = "cARGOCARRIERLINKDataGridViewTextBoxColumn";
+            this.cARGOCARRIERLINKDataGridViewTextBoxColumn.ReadOnly = true;
             this.cARGOCARRIERLINKDataGridViewTextBoxColumn.Visible = false;
             // 
             // cARGOSUPPLIERLINKDataGridViewTextBoxColumn
@@ -160,6 +172,7 @@
             this.cARGOSUPPLIERLINKDataGridViewTextBoxColumn.DataPropertyName = "CARGO_SUPPLIER_LINK";
             this.cARGOSUPPLIERLINKDataGridViewTextBoxColumn.HeaderText = "CARGO_SUPPLIER_LINK";
             this.cARGOSUPPLIERLINKDataGridViewTextBoxColumn.Name = "cARGOSUPPLIERLINKDataGridViewTextBoxColumn";
+            this.cARGOSUPPLIERLINKDataGridViewTextBoxColumn.ReadOnly = true;
             this.cARGOSUPPLIERLINKDataGridViewTextBoxColumn.Visible = false;
             // 
             // nOTEDataGridViewTextBoxColumn
@@ -167,6 +180,7 @@
             this.nOTEDataGridViewTextBoxColumn.DataPropertyName = "NOTE";
             this.nOTEDataGridViewTextBoxColumn.HeaderText = "NOTE";
             this.nOTEDataGridViewTextBoxColumn.Name = "nOTEDataGridViewTextBoxColumn";
+            this.nOTEDataGridViewTextBoxColumn.ReadOnly = true;
             this.nOTEDataGridViewTextBoxColumn.Width = 300;
             // 
             // CargoDirectoryForm

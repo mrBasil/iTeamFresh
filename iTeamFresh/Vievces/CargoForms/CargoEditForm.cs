@@ -15,8 +15,7 @@ namespace iTeamFresh.Vievces
     {
         MainClas mc = Program.mc;
         CargoRepository cargoRepository;
-        private Cargo cargo;
-        
+        private Cargo cargo;        
 
         public CargoEditForm()
         {
@@ -48,13 +47,19 @@ namespace iTeamFresh.Vievces
 
             cargo.NOTE = textBox_note.TextLength > 0 ? textBox_note.Text : null;
 
-            cargo.CARGO_CARRIER_LINK =  int.Parse(comboBox_carrier.SelectedValue.ToString());
+            try
+            {
+                cargo.CARGO_CARRIER_LINK = int.Parse(comboBox_carrier.SelectedValue != null ? comboBox_carrier.SelectedValue.ToString() : null);
 
-            cargo.CARGO_RECIPIENT_LINK = int.Parse(comboBox_recipient.SelectedValue.ToString());
+                cargo.CARGO_RECIPIENT_LINK = int.Parse(comboBox_recipient.SelectedValue.ToString());
 
-            cargo.CARGO_SENDER_LINK = int.Parse(comboBox_sender.SelectedValue.ToString());
+                cargo.CARGO_SENDER_LINK = int.Parse(comboBox_sender.SelectedValue.ToString());
 
-            cargo.CARGO_SUPPLIER_LINK = int.Parse(comboBox_suplier.SelectedValue.ToString());
+                cargo.CARGO_SUPPLIER_LINK = int.Parse(comboBox_suplier.SelectedValue.ToString());
+            }
+            catch {
+                Console.WriteLine("Короче значение в комбобоксах не определены для ссылок на справочники клиентов CargoEditForm btn_save");
+            }
 
             if (cargo.ID == null)
                 cargoRepository.InsertCargo(cargo);
@@ -78,13 +83,22 @@ namespace iTeamFresh.Vievces
             comboBox_recipient.DataSource = clientRepository.GetClient();
             comboBox_carrier.DataSource = clientRepository.GetClient();
 
-            if (cargo.ID != null) {                
-                comboBox_suplier.SelectedValue = cargo.ID;
-                comboBox_sender.SelectedValue = cargo.ID;
-                comboBox_recipient.SelectedValue = cargo.ID;
-                comboBox_carrier.SelectedValue = cargo.ID;            
+            if (cargo.ID != null) 
+            {  
+                if(cargo.CARGO_SUPPLIER_LINK != null)
+                    comboBox_suplier.SelectedValue = cargo.CARGO_SUPPLIER_LINK;
+                if(cargo.CARGO_SENDER_LINK != null)
+                    comboBox_sender.SelectedValue = cargo.CARGO_SENDER_LINK;
+                if(cargo.CARGO_RECIPIENT_LINK != null)
+                    comboBox_recipient.SelectedValue = cargo.CARGO_RECIPIENT_LINK;
+                if(cargo.CARGO_CARRIER_LINK != null)
+                    comboBox_carrier.SelectedValue = cargo.CARGO_CARRIER_LINK;            
             }
-
+            textBox_articul.Text = cargo.ARTICLE_NUMBER;
+            textBox_dirt.Text = cargo.DIRT+"";
+            textBox_price.Text = cargo.PRICE + "";
+            textBox_name.Text = cargo.NAME;
+            textBox_note.Text = cargo.NOTE;
         }
     }
 }

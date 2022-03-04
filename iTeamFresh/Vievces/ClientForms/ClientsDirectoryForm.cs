@@ -20,23 +20,23 @@ namespace iTeamFresh.Vievces
         public ClientsDirectoryForm()
         {
             InitializeComponent();
+
             clientRepository = mc.GetClientRepository();
+
             dataGridView1.DataSource = clientRepository.GetClient();
         }
 
         private void add_Click(object sender, EventArgs e)
         {
-            
-            var clietns = clientRepository.GetClient();
-            clietns.Add(new Client());
-            dataGridView1.DataSource = clietns;
-            
+            var clientEditForm = new ClientForms.ClientEditForm(new Client());
+            clientEditForm.Show();
         }
 
         private void save_Click(object sender, EventArgs e)
         {
-            var tempClientS = (List<Client>)dataGridView1.DataSource;
-            Client client = tempClientS.Last();
+            var client = dataGridView1.SelectedRows[0].DataBoundItem as Client;
+            var clietnEditForm = new ClientForms.ClientEditForm(client);
+            clietnEditForm.Show();
             
         }
 
