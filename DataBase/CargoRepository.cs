@@ -46,6 +46,34 @@ namespace DataBase
                 return db.Query<Cargo>("SELECT * FROM CARGO ").ToList();
             };
         }
+        public List<CargoDTO> GetCargoDTO()
+        {
+            string selectQuery = @"SELECT
+                                    c.ID,
+                                    c.NAME,
+                                    c.ARTICLE_NUMBER,
+                                    c.DIRT,
+                                    c.PRICE,
+                                    c.NOTE,
+                                    c.CARGO_SENDER_LINK,
+                                    c.CARGO_RECIPIENT_LINK,
+                                    c.CARGO_CARRIER_LINK,
+                                    c.CARGO_SUPPLIER_LINK,
+                                    cl1.Name AS Sender,
+                                    cl2.Name AS Recipient,
+                                    cl3.NAME AS Carrier,
+                                    cl4.NAME AS Suplier                                    
+                                FROM CARGO C
+                                INNER JOIN CLIENTS cl1 ON cl1.ID = c.CARGO_SENDER_LINK
+                                INNER JOIN CLIENTS cl2 ON cl2.ID = c.CARGO_RECIPIENT_LINK
+                                INNER JOIN CLIENTS cl3 ON cl3.ID = c.CARGO_CARRIER_LINK
+                                INNER JOIN CLIENTS cl4 ON cl4.ID = c.CARGO_SUPPLIER_LINK  ";
+
+            using (FbConnection db = new FbConnection(conectionString))
+            {
+                return db.Query<CargoDTO>(selectQuery).ToList();
+            };
+        }
         /// <summary>
         /// Вставка новой строки в таблицу Cargo
         /// </summary>
@@ -99,7 +127,7 @@ namespace DataBase
         {
             using (FbConnection db = new FbConnection(conectionString))
             {
-                string insertQuery = @"UPDATE CARGO SET 
+                string updateQuery = @"UPDATE CARGO SET 
                                         NAME = @NAME,
                                         ARTICLE_NUMBER = @ARTICLE_NUMBER,
                                         DIRT = @DIRT,
@@ -107,12 +135,12 @@ namespace DataBase
                                         CARGO_SENDER_LINK = @CARGO_SENDER_LINK,
                                         CARGO_RECIPIENT_LINK = @CARGO_RECIPIENT_LINK,
                                         CARGO_CARRIER_LINK = @CARGO_CARRIER_LINK,
-                                        CARGO_SUPPLIER_LINK = @CARGO_SUPPLIER_LINK
+                                        CARGO_SUPPLIER_LINK = @CARGO_SUPPLIER_LINK,
                                         NOTE = @NOTE
                                         WHERE ID = @ID";
 
 
-                db.Execute(insertQuery, cargo);
+                db.Execute(updateQuery, cargo);
             }
 
         }

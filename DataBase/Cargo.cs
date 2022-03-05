@@ -15,7 +15,7 @@ namespace DataBase
         /// <summary>
         /// идентификатор
         /// </summary>
-        public int ID { get; set; }
+        public int? ID { get; set; }
         /// <summary>
         /// имя груза
         /// </summary>
@@ -27,27 +27,27 @@ namespace DataBase
         /// <summary>
         /// сорность %
         /// </summary>
-        public float DIRT { get; set; }
+        public float? DIRT { get; set; }
         /// <summary>
         /// цена 
         /// </summary>
-        public float PRICE { get; set; }
+        public float? PRICE { get; set; }
         /// <summary>
         /// отправитель - справочник клиентов
         /// </summary>
-        public int CARGO_SENDER_LINK { get; set; }
+        public int? CARGO_SENDER_LINK { get; set; }
         /// <summary>
         /// получатель - справочник клиентов
         /// </summary>
-        public int CARGO_RECIPIENT_LINK { get; set; }
+        public int? CARGO_RECIPIENT_LINK { get; set; }
         /// <summary>
         /// перевозчик - справочник клиентов
         /// </summary>
-        public int CARGO_CARRIER_LINK { get; set; }
+        public int? CARGO_CARRIER_LINK { get; set; }
         /// <summary>
         /// поставщик - справочник клиентов
         /// </summary>
-        public int CARGO_SUPPLIER_LINK { get; set; }
+        public int? CARGO_SUPPLIER_LINK { get; set; }
         /// <summary>
         /// примечание к записи
         /// </summary>

@@ -109,7 +109,7 @@ namespace iTeamFresh.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("rr")]
         public string indicator_protocol {
             get {
                 return ((string)(this["indicator_protocol"]));
@@ -121,13 +121,25 @@ namespace iTeamFresh.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("rr")]
         public string IO_device {
             get {
                 return ((string)(this["IO_device"]));
             }
             set {
                 this["IO_device"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rr")]
+        public string path_DB {
+            get {
+                return ((string)(this["path_DB"]));
+            }
+            set {
+                this["path_DB"] = value;
             }
         }
     }

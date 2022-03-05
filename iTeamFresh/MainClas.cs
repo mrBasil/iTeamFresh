@@ -17,16 +17,19 @@ namespace iTeamFresh
     internal class MainClas
     {
         public event LangugeChange changeLanguage;
-
+        //Database = @"C:\Users\user\Desktop\for\tf_db.fdb",
+        /// <summary>
+        /// Строка подключения к базе данных
+        /// </summary>
         private FbConnectionStringBuilder con = new FbConnectionStringBuilder()
         {
             DataSource = "localhost",
             UserID = "SYSDBA",
             Password = "masterkey",
             Port = 3050,
-            Database = @"C:\Users\user\Desktop\for\tf_db.fdb",
+            Database = Environment.CurrentDirectory + @"\tf_db.fdb",
             Charset = "win1251",
-            Pooling = false
+            Pooling = false          
 
         };
         public Indikator indicator { get; set; }
@@ -119,6 +122,10 @@ namespace iTeamFresh
 
         public WeighingRepository GetWeighingRepository() {
             return new WeighingRepository(con.ConnectionString);
+        }
+
+        public ClientRepository GetClientRepository() {
+            return new ClientRepository(con.ConnectionString);
         }
     }
 }

@@ -120,6 +120,6 @@ namespace DataBase
         /// </summary>
         public string SERIES_OF_DOCUMENT { get; set; }
         
-
+        
     }
 }
