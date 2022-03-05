@@ -63,7 +63,7 @@ namespace iTeamFresh.Vievces
             DataBase.Weighing we = mc.wr.GetWeighing(2);
 
             we.DRIVER = "Tarasov S";
-            we.USER_FIRST_WEIGHING = "Kolesnikov A";
+            we.USER_FIRST_WEIGHING = "Kolesnikov A11";
             we.USER_SECOND_WEIGHING = "Matveich ";
 
             mc.wr.UpdateWeighing(we);
