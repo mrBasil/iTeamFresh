@@ -127,5 +127,9 @@ namespace iTeamFresh
         public ClientRepository GetClientRepository() {
             return new ClientRepository(con.ConnectionString);
         }
+        public TransportRepository GetTransportRepository()
+        {
+            return new TransportRepository(con.ConnectionString);
+        }
     }
 }
