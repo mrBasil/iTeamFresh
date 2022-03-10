@@ -74,15 +74,26 @@ namespace iTeamFresh.Vievces
 
         private void clientsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var clientDirectory = new Vievces.ClientsDirectoryForm();
-            clientDirectory.Show();
-
+            //var clientDirectory = new Vievces.ClientsDirectoryForm();
+            //clientDirectory.Show();
+            var frmDir = new Directory.DirectoryForm(mc.GetClientRepository());
+            frmDir.ShowDialog();
         }
 
         private void cargoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var cargoForm = new CargoDirectoryForm();
-            cargoForm.Show();
+            //var cargoForm = new CargoDirectoryForm();
+            //cargoForm.Show();
+            var frmDir = new Directory.DirectoryForm(mc.GetCargoRepository());
+            frmDir.ShowDialog();
+
+
+        }
+
+        private void transportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frmDir = new Directory.DirectoryForm(mc.GetTransportRepository());
+            frmDir.ShowDialog();
         }
     }
 }

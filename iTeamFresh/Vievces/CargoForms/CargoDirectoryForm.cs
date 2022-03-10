@@ -14,7 +14,7 @@ namespace iTeamFresh.Vievces
 {
     public partial class CargoDirectoryForm : Form
     {
-       MainClas mc = Program.mc;
+        MainClas mc = Program.mc;
         CargoRepository cargoRepository; 
 
         public CargoDirectoryForm()

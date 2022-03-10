@@ -41,19 +41,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.weighingPage = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.newWeighingPage = new System.Windows.Forms.TabPage();
-            this.lb_user = new System.Windows.Forms.Label();
-            this.monthCalendar = new System.Windows.Forms.MonthCalendar();
-            this.panel_mnemoShem = new System.Windows.Forms.Panel();
-            this.btn_greenIn = new System.Windows.Forms.Button();
-            this.btn_redIn = new System.Windows.Forms.Button();
-            this.btn_redOut = new System.Windows.Forms.Button();
-            this.btn_greenOut = new System.Windows.Forms.Button();
-            this.lb_weight = new System.Windows.Forms.Label();
-            this.pictureBox_logo = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.TYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dATEFIRSTWEIGHINGDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dATESECONDWEIGHINGDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.wEIGHTFIRSTWEIGHINGDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,13 +67,24 @@
             this.nUMBEROFDOCUMNETDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sERIESOFDOCUMENTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.weighingDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.newWeighingPage = new System.Windows.Forms.TabPage();
+            this.lb_user = new System.Windows.Forms.Label();
+            this.monthCalendar = new System.Windows.Forms.MonthCalendar();
+            this.panel_mnemoShem = new System.Windows.Forms.Panel();
+            this.btn_greenIn = new System.Windows.Forms.Button();
+            this.btn_redIn = new System.Windows.Forms.Button();
+            this.btn_redOut = new System.Windows.Forms.Button();
+            this.btn_greenOut = new System.Windows.Forms.Button();
+            this.lb_weight = new System.Windows.Forms.Label();
+            this.pictureBox_logo = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.menue.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.weighingPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weighingDTOBindingSource)).BeginInit();
             this.panel_mnemoShem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.weighingDTOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menue
@@ -111,21 +111,21 @@
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.settingsToolStripMenuItem.Text = "Settings*";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // logToolStripMenuItem
             // 
             this.logToolStripMenuItem.Name = "logToolStripMenuItem";
-            this.logToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.logToolStripMenuItem.Text = "Log*";
             this.logToolStripMenuItem.Click += new System.EventHandler(this.logToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.exitToolStripMenuItem.Text = "Exit*";
             // 
             // directoryToolStripMenuItem
@@ -141,14 +141,14 @@
             // clientsToolStripMenuItem
             // 
             this.clientsToolStripMenuItem.Name = "clientsToolStripMenuItem";
-            this.clientsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clientsToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.clientsToolStripMenuItem.Text = "Clients*";
             this.clientsToolStripMenuItem.Click += new System.EventHandler(this.clientsToolStripMenuItem_Click);
             // 
             // cargoToolStripMenuItem
             // 
             this.cargoToolStripMenuItem.Name = "cargoToolStripMenuItem";
-            this.cargoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cargoToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.cargoToolStripMenuItem.Text = "Cargo*";
             this.cargoToolStripMenuItem.Click += new System.EventHandler(this.cargoToolStripMenuItem_Click);
             // 
@@ -157,6 +157,7 @@
             this.transportToolStripMenuItem.Name = "transportToolStripMenuItem";
             this.transportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.transportToolStripMenuItem.Text = "Transport*";
+            this.transportToolStripMenuItem.Click += new System.EventHandler(this.transportToolStripMenuItem_Click);
             // 
             // tabControl1
             // 
@@ -215,121 +216,17 @@
             this.dataGridView1.Size = new System.Drawing.Size(969, 485);
             this.dataGridView1.TabIndex = 0;
             // 
-            // newWeighingPage
+            // iDDataGridViewTextBoxColumn
             // 
-            this.newWeighingPage.Location = new System.Drawing.Point(4, 22);
-            this.newWeighingPage.Name = "newWeighingPage";
-            this.newWeighingPage.Padding = new System.Windows.Forms.Padding(3);
-            this.newWeighingPage.Size = new System.Drawing.Size(975, 487);
-            this.newWeighingPage.TabIndex = 1;
-            this.newWeighingPage.Text = "NewWeighingPage*";
-            this.newWeighingPage.UseVisualStyleBackColor = true;
-            // 
-            // lb_user
-            // 
-            this.lb_user.AutoSize = true;
-            this.lb_user.Location = new System.Drawing.Point(18, 685);
-            this.lb_user.Name = "lb_user";
-            this.lb_user.Size = new System.Drawing.Size(33, 13);
-            this.lb_user.TabIndex = 2;
-            this.lb_user.Text = "User*";
-            // 
-            // monthCalendar
-            // 
-            this.monthCalendar.Location = new System.Drawing.Point(826, 21);
-            this.monthCalendar.MaxSelectionCount = 30;
-            this.monthCalendar.Name = "monthCalendar";
-            this.monthCalendar.TabIndex = 3;
-            // 
-            // panel_mnemoShem
-            // 
-            this.panel_mnemoShem.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel_mnemoShem.Controls.Add(this.btn_greenIn);
-            this.panel_mnemoShem.Controls.Add(this.btn_redIn);
-            this.panel_mnemoShem.Controls.Add(this.btn_redOut);
-            this.panel_mnemoShem.Controls.Add(this.btn_greenOut);
-            this.panel_mnemoShem.Controls.Add(this.lb_weight);
-            this.panel_mnemoShem.Location = new System.Drawing.Point(165, 21);
-            this.panel_mnemoShem.Name = "panel_mnemoShem";
-            this.panel_mnemoShem.Size = new System.Drawing.Size(649, 142);
-            this.panel_mnemoShem.TabIndex = 4;
-            // 
-            // btn_greenIn
-            // 
-            this.btn_greenIn.Image = global::iTeamFresh.Properties.Resources.серый1;
-            this.btn_greenIn.Location = new System.Drawing.Point(484, 71);
-            this.btn_greenIn.Name = "btn_greenIn";
-            this.btn_greenIn.Size = new System.Drawing.Size(57, 60);
-            this.btn_greenIn.TabIndex = 10;
-            this.btn_greenIn.UseVisualStyleBackColor = true;
-            // 
-            // btn_redIn
-            // 
-            this.btn_redIn.Image = global::iTeamFresh.Properties.Resources.серый1;
-            this.btn_redIn.Location = new System.Drawing.Point(484, 11);
-            this.btn_redIn.Name = "btn_redIn";
-            this.btn_redIn.Size = new System.Drawing.Size(57, 60);
-            this.btn_redIn.TabIndex = 9;
-            this.btn_redIn.UseVisualStyleBackColor = true;
-            // 
-            // btn_redOut
-            // 
-            this.btn_redOut.Image = global::iTeamFresh.Properties.Resources.серый1;
-            this.btn_redOut.Location = new System.Drawing.Point(107, 11);
-            this.btn_redOut.Name = "btn_redOut";
-            this.btn_redOut.Size = new System.Drawing.Size(57, 60);
-            this.btn_redOut.TabIndex = 8;
-            this.btn_redOut.UseVisualStyleBackColor = true;
-            // 
-            // btn_greenOut
-            // 
-            this.btn_greenOut.Image = global::iTeamFresh.Properties.Resources.серый1;
-            this.btn_greenOut.Location = new System.Drawing.Point(107, 71);
-            this.btn_greenOut.Name = "btn_greenOut";
-            this.btn_greenOut.Size = new System.Drawing.Size(57, 60);
-            this.btn_greenOut.TabIndex = 7;
-            this.btn_greenOut.UseVisualStyleBackColor = true;
-            // 
-            // lb_weight
-            // 
-            this.lb_weight.AutoSize = true;
-            this.lb_weight.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lb_weight.ForeColor = System.Drawing.Color.Black;
-            this.lb_weight.Location = new System.Drawing.Point(255, 33);
-            this.lb_weight.Name = "lb_weight";
-            this.lb_weight.Size = new System.Drawing.Size(123, 55);
-            this.lb_weight.TabIndex = 6;
-            this.lb_weight.Text = "ВЕС";
-            this.lb_weight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox_logo
-            // 
-            this.pictureBox_logo.Location = new System.Drawing.Point(17, 21);
-            this.pictureBox_logo.Name = "pictureBox_logo";
-            this.pictureBox_logo.Size = new System.Drawing.Size(142, 142);
-            this.pictureBox_logo.TabIndex = 5;
-            this.pictureBox_logo.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 87);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Temp Label LOGO";
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
             // 
             // TYPE
             // 
             this.TYPE.DataPropertyName = "TYPE";
             this.TYPE.HeaderText = "TYPE";
             this.TYPE.Name = "TYPE";
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
             // 
             // dATEFIRSTWEIGHINGDataGridViewTextBoxColumn
             // 
@@ -473,6 +370,110 @@
             // 
             this.weighingDTOBindingSource.DataSource = typeof(DataBase.WeighingDTO);
             // 
+            // newWeighingPage
+            // 
+            this.newWeighingPage.Location = new System.Drawing.Point(4, 22);
+            this.newWeighingPage.Name = "newWeighingPage";
+            this.newWeighingPage.Padding = new System.Windows.Forms.Padding(3);
+            this.newWeighingPage.Size = new System.Drawing.Size(975, 487);
+            this.newWeighingPage.TabIndex = 1;
+            this.newWeighingPage.Text = "NewWeighingPage*";
+            this.newWeighingPage.UseVisualStyleBackColor = true;
+            // 
+            // lb_user
+            // 
+            this.lb_user.AutoSize = true;
+            this.lb_user.Location = new System.Drawing.Point(18, 685);
+            this.lb_user.Name = "lb_user";
+            this.lb_user.Size = new System.Drawing.Size(33, 13);
+            this.lb_user.TabIndex = 2;
+            this.lb_user.Text = "User*";
+            // 
+            // monthCalendar
+            // 
+            this.monthCalendar.Location = new System.Drawing.Point(826, 21);
+            this.monthCalendar.MaxSelectionCount = 30;
+            this.monthCalendar.Name = "monthCalendar";
+            this.monthCalendar.TabIndex = 3;
+            // 
+            // panel_mnemoShem
+            // 
+            this.panel_mnemoShem.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel_mnemoShem.Controls.Add(this.btn_greenIn);
+            this.panel_mnemoShem.Controls.Add(this.btn_redIn);
+            this.panel_mnemoShem.Controls.Add(this.btn_redOut);
+            this.panel_mnemoShem.Controls.Add(this.btn_greenOut);
+            this.panel_mnemoShem.Controls.Add(this.lb_weight);
+            this.panel_mnemoShem.Location = new System.Drawing.Point(165, 21);
+            this.panel_mnemoShem.Name = "panel_mnemoShem";
+            this.panel_mnemoShem.Size = new System.Drawing.Size(649, 142);
+            this.panel_mnemoShem.TabIndex = 4;
+            // 
+            // btn_greenIn
+            // 
+            this.btn_greenIn.Image = global::iTeamFresh.Properties.Resources.серый1;
+            this.btn_greenIn.Location = new System.Drawing.Point(484, 71);
+            this.btn_greenIn.Name = "btn_greenIn";
+            this.btn_greenIn.Size = new System.Drawing.Size(57, 60);
+            this.btn_greenIn.TabIndex = 10;
+            this.btn_greenIn.UseVisualStyleBackColor = true;
+            // 
+            // btn_redIn
+            // 
+            this.btn_redIn.Image = global::iTeamFresh.Properties.Resources.серый1;
+            this.btn_redIn.Location = new System.Drawing.Point(484, 11);
+            this.btn_redIn.Name = "btn_redIn";
+            this.btn_redIn.Size = new System.Drawing.Size(57, 60);
+            this.btn_redIn.TabIndex = 9;
+            this.btn_redIn.UseVisualStyleBackColor = true;
+            // 
+            // btn_redOut
+            // 
+            this.btn_redOut.Image = global::iTeamFresh.Properties.Resources.серый1;
+            this.btn_redOut.Location = new System.Drawing.Point(107, 11);
+            this.btn_redOut.Name = "btn_redOut";
+            this.btn_redOut.Size = new System.Drawing.Size(57, 60);
+            this.btn_redOut.TabIndex = 8;
+            this.btn_redOut.UseVisualStyleBackColor = true;
+            // 
+            // btn_greenOut
+            // 
+            this.btn_greenOut.Image = global::iTeamFresh.Properties.Resources.серый1;
+            this.btn_greenOut.Location = new System.Drawing.Point(107, 71);
+            this.btn_greenOut.Name = "btn_greenOut";
+            this.btn_greenOut.Size = new System.Drawing.Size(57, 60);
+            this.btn_greenOut.TabIndex = 7;
+            this.btn_greenOut.UseVisualStyleBackColor = true;
+            // 
+            // lb_weight
+            // 
+            this.lb_weight.AutoSize = true;
+            this.lb_weight.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lb_weight.ForeColor = System.Drawing.Color.Black;
+            this.lb_weight.Location = new System.Drawing.Point(255, 33);
+            this.lb_weight.Name = "lb_weight";
+            this.lb_weight.Size = new System.Drawing.Size(123, 55);
+            this.lb_weight.TabIndex = 6;
+            this.lb_weight.Text = "ВЕС";
+            this.lb_weight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox_logo
+            // 
+            this.pictureBox_logo.Location = new System.Drawing.Point(17, 21);
+            this.pictureBox_logo.Name = "pictureBox_logo";
+            this.pictureBox_logo.Size = new System.Drawing.Size(142, 142);
+            this.pictureBox_logo.TabIndex = 5;
+            this.pictureBox_logo.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(30, 87);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Temp Label LOGO";
+            // 
             // WeighingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -487,16 +488,17 @@
             this.Controls.Add(this.menue);
             this.MainMenuStrip = this.menue;
             this.Name = "WeighingsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WeighingsForm*";
             this.menue.ResumeLayout(false);
             this.menue.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.weighingPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weighingDTOBindingSource)).EndInit();
             this.panel_mnemoShem.ResumeLayout(false);
             this.panel_mnemoShem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.weighingDTOBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
