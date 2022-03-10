@@ -34,9 +34,7 @@ namespace iTeamFresh.Vievces
             GetAllClients();
 
         }
-
-        private void btn_save_Click(object sender, EventArgs e)
-        {
+        private void add_new_cargo() {
             cargo.NAME = textBox_name.Text;
 
             cargo.DIRT = textBox_dirt.TextLength > 0 ? float.Parse(textBox_dirt.Text) : 0;
@@ -57,16 +55,37 @@ namespace iTeamFresh.Vievces
 
                 cargo.CARGO_SUPPLIER_LINK = int.Parse(comboBox_suplier.SelectedValue.ToString());
             }
-            catch {
+            catch
+            {
                 Console.WriteLine("Короче значение в комбобоксах не определены для ссылок на справочники клиентов CargoEditForm btn_save");
             }
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            add_new_cargo();
 
             if (cargo.ID == null)
-                cargoRepository.InsertCargo(cargo);
-            else
-                cargoRepository.UpdateCargo(cargo);
+            {
+                DialogResult result = MessageBox.Show("add?*", string.Format("New Cargo {0}*", cargo.NAME), MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    cargoRepository.InsertCargo(cargo);
+                    Close();
+                }
 
-            Close();
+            }
+            else {
+                DialogResult result = MessageBox.Show("Edit?*", string.Format("Cargo {0}*",(cargo.NAME)), MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    cargoRepository.UpdateCargo(cargo);
+                    Close();
+                }
+            }
+                
+
+            
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)

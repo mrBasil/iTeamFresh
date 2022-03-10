@@ -50,11 +50,19 @@ namespace iTeamFresh.Vievces
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            int? selectedRows = int.Parse(dataGridView1.SelectedCells[0].Value.ToString());
+            
+            int selectedRows = int.Parse(dataGridView1.SelectedCells[0].Value.ToString());
             if (selectedRows != null)
             {
-                cargoRepository.DeleteCargo(int.Parse(dataGridView1.SelectedCells[0].Value.ToString()));
-                dataGridView1.DataSource = cargoRepository.GetCargo();
+                DialogResult result = MessageBox.Show("delete?*", string.Format("delete the cargo : {0}*", cargoRepository.GetCargo(selectedRows).NAME, MessageBoxButtons.YesNo));
+                if (result == DialogResult.Yes)
+                {
+                    cargoRepository.DeleteCargo(selectedRows);
+                    dataGridView1.DataSource = cargoRepository.GetCargo();
+                }
+                else {
+                    Console.WriteLine("No");
+                }
             }
             else {
 
